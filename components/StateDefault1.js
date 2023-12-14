@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import styles from "./StateDefault1.modules.css";
+import styles from "./StateDefault1.module.css";
 
 const StateDefault1 = ({
   inicio,  
