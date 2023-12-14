@@ -1,0 +1,69 @@
+.product-child {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  height: 201px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.produ-name1 {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.lorem-ipsum-dolor9 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-base);
+  color: var(--gray);
+}
+.button-wrapper1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.produ-name-group {
+  align-self: stretch;
+  border-top: 1px solid var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+.product {
+  border: 1px solid var(--gray);
+  box-sizing: border-box;
+  width: 332.6px;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0px;
+  gap: var(--gap-mid);
+}
+.product-group {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-mini);
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--white);
+  font-family: var(--font-fira-code);
+}
+
+@media screen and (max-width: 420px) {
+  .product-group {
+    flex-direction: row;
+    gap: var(--gap-41xl);
+    align-items: flex-start;
+    justify-content: center;
+  }
+}

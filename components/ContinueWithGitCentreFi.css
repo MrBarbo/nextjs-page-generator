@@ -1,0 +1,54 @@
+.github-142-icon {
+  align-self: left;
+  flex: 1;
+  position: relative;
+  max-width: 75%;
+  overflow: hidden;
+  max-height: 75%;
+}
+.continue-with-github,
+.google-logo2 {
+  align-self: stretch;
+  flex: 1;
+  align-items: center;
+}
+.google-logo2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 0px 0px 0px 0px;
+}
+.continue-with-github {
+  position: relative;
+  font-weight: 500;
+  display: flex;
+  overflow: hidden;  
+  text-overflow: ellipsis;
+  -webkit-box-orient: horizontal;
+  margin-left: -100px;
+  margin-right: 0px;
+  padding: 0px;
+}
+.continue-with-git-centre {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.08), 0 2px 3px rgba(0, 0, 0, 0.17);
+  width: 345px;
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-400);
+  font-family: var(--font-roboto);
+}
+
+.continue-with-git-centre:hover {
+  background-color: var(--color-whitesmoke);
+}
+
+.continue-with-git-centre:active {
+  background-color: var(--color-gainsboro);
+}

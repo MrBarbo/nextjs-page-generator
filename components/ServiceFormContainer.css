@@ -1,0 +1,9 @@
+.services-group {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0px var(--padding-mini);
+}

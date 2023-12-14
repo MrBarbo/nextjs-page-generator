@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "@mui/icons-material": "^5.14.19",
+    "@mui/material": "^5.14.20",
+    "mui": "^0.0.1",
+    "next": "14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.1"
   }
 }

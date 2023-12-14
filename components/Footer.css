@@ -1,0 +1,118 @@
+.footer-child {
+  align-self: stretch;
+  position: relative;
+  border-top: 1px solid var(--gray);
+  box-sizing: border-box;
+  height: 1px;
+}
+.logo-icon {
+  position: relative;
+  width: 29px;
+  height: 26px;
+  object-fit: cover;
+}
+.supersite {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+}
+.logo-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-4xs);
+}
+.frame-wrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.lore-ipsum-dolor {
+  position: relative;
+}
+.frame-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--gap-base);
+}
+.socials {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.email-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.instagram-icon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.email-parent {
+  align-self: unset;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.socials-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--gap-xs);
+  text-align: right;
+  font-size: var(--font-size-5xl);
+}
+.frame-group {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.copyright {
+  align-self: stretch;
+  position: relative;
+  color: var(--gray);
+}
+.frame-parent {
+  align-self: stretch;
+  flex: unset;
+  height: 119px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px var(--padding-8xs);
+}
+.footer {
+  background-color: var(--head-and-foot);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xl);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--white);
+  font-family: var(--font-fira-code);
+  align-self: stretch;
+  height: unset;
+}
