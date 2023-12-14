@@ -1,20 +1,12 @@
 import { useMemo } from "react";
-import "./StateDefault.css";
+import styles from "./StateDefault.module.css";
 import LanguageSelector from "./LanguageSelector"
 
 const StateDefault = ({ stateDefaultFlex}) => {
-  
-  const stateDefaultStyle = useMemo(() => {
-    return {
-      flex: stateDefaultFlex,
-    };
-  }, [stateDefaultFlex]);
-
- 
 
   return (
-    <div className="statedefault" style={stateDefaultStyle}>
-      <div className="es"></div>      
+    <div className={styles.statedefault}>
+      <div className={styles.es}></div>      
       <LanguageSelector></LanguageSelector>      
     </div>
   );

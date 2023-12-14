@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import StateDefault1 from "./StateDefault1";
 import StateDefault from "./StateDefault";
-import "./Header.css";
+import styles from "./Header.module.css";
 
 const Header = ({
   showFrameDiv,    
@@ -9,48 +9,35 @@ const Header = ({
 }) => {
   
   return (
-    <div className="header">
-      <div className="logo-group">
-        <img className="logo-icon1" alt="" src="/logo1@2x.png" />
-        <b className="supersite1">SuperSite</b>        
+    <div className={styles.header}>
+      <div className={styles.logo_group}>
+        <img className={styles.logo_icon1} alt="" src="/logo1@2x.png" />
+        <b className={styles.supersite1}>SuperSite</b>        
       </div>
       {showFrameDiv && (
-        <div className="header-link-parent">
+        <div className={styles.header_link_parent}>
           <StateDefault1
             inicio="Home"            
-            divColor="var(--primary)"
-            divFontWeight="500"
-            inicioColor="var(--white)"
+            
             onHeaderLinkContainerClick="unset"
             
           />
           <StateDefault1
             inicio="About us"
-            stateDefaultFlex="1"            
-            divColor="var(--primary)"
-            divFontWeight="unset"
-            inicioColor="#var(--gray)"
-            inicioFontWeight="unset"
+            
           />
           <StateDefault1
             inicio="Services"
-            divColor="var(--primary)"
-            divFontWeight="unset"
-            inicioColor="var(--gray)"
+            
             onHeaderLinkContainerClick="unset"
           />
           <StateDefault1
             inicio="Products"
-            divColor="var(--primary)"
-            divFontWeight="unset"
-            inicioColor="var(--gray)"
+            
             onHeaderLinkContainerClick
           />
           <StateDefault1
             inicio="Projects"
-            divColor="var(--primary)"
-            divFontWeight="unset"
-            inicioColor="var(--gray)"
             onHeaderLinkContainerClick
           />
           <StateDefault/>

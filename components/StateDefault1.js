@@ -1,38 +1,21 @@
 import { useMemo } from "react";
-import "./StateDefault1.css";
+import styles from "./StateDefault1.modules.css";
 
 const StateDefault1 = ({
   inicio,  
-  divColor,
-  divFontWeight,
-  inicioColor,
+
+  
   onHeaderLinkContainerClick,
 }) => {
-  
-
-  const divStyle = useMemo(() => {
-    return {
-      color: divColor,
-      fontWeight: divFontWeight,
-    };
-  }, [divColor, divFontWeight]);
-
-  const inicioStyle = useMemo(() => {
-    return {
-      color: inicioColor,
-      fontWeight: divFontWeight,
-    };
-  }, [inicioColor, divFontWeight]);
-
   return (
     <div
-      className="statedefault1"      
+      className={styles.statedefault1}
       onClick={onHeaderLinkContainerClick}
     >
-      <div className="div3" style={divStyle}>
+      <div className={styles.div3}>
         #
       </div>
-      <div className="inicio" style={inicioStyle}>
+      <div className={styles.inicio}>
         {inicio}
       </div>
     </div>

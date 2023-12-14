@@ -7,14 +7,14 @@
 .supersite1 {
   position: relative;
 }
-.logo-group {
+.logo_group {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-8xs);
 }
-.header-link-parent {
+.header_link_parent {
   width: 100%;
   display: flex;
   flex-direction: row;

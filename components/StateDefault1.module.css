@@ -1,9 +1,12 @@
 .div3 {
   position: relative;
+  color: var(--primary);
+  font-weight: 500;
 }
 .inicio {
   position: relative;
   color: var(--gray);
+  font-weight: 500;
   cursor: pointer;
 }
 .statedefault1 {
