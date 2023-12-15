@@ -1,9 +1,13 @@
+"use client";
 import { useMemo } from "react";
 import H2 from "./H2";
 import Property1Default1 from "./Property1Default1";
-import "./WhatWeHave.css";
+import { useRouter } from 'next/navigation';
+import styles from "./WhatWeHave.module.css";
 
 const WhatWeHave = ({
+  onClickEvent,
+
   prodPhot,
   produName,
   productDesc,
@@ -23,24 +27,25 @@ const WhatWeHave = ({
   produName5,
   productDesc5,
   
-  onClickEvent,
+  
   onFrameContainer8Click,
   onFrameContainer10Click,
   onFrameContainer14Click,
   onFrameContainer16Click,
 }) => {
+
   return (
-    <div className="what-we-have">
+    <div className={styles.what_we_have}>
       <H2
         propHeader="Products"
         
       />
-      <div className="product-parent">
+      <div className={styles.product_parent}>
         <Property1Default1
           prodPhoto={prodPhot}
           produName={produName}
           productDesc={productDesc}  
-          onClickEvent={onClickEvent}        
+          onClickEv={onClickEvent}        
         />
         <Property1Default1
           prodPhoto={prodPhot1}

@@ -5,7 +5,7 @@
   text-align: left;
   flex: unset;
 }
-.statedefault-typeprimary {
+.statedefault_typeprimary {
   border: 1px solid var(--primary);
   align-items: flex-start;
   justify-content: flex-start;
@@ -23,6 +23,6 @@
   cursor: pointer;
 }
 
-.statedefault-typeprimary:hover{
+.statedefault_typeprimary:hover{
   background-color:  var(--primary-hover);
 }

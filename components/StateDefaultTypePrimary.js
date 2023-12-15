@@ -1,16 +1,20 @@
-import { useMemo } from "react";
-import "./StateDefaultTypePrimary.css";
+'use client'
+import { useRouter } from 'next/navigation';
+import styles from "./StateDefaultTypePrimary.module.css";
 
 const StateDefaultTypePrimary = ({
   go,
   goClick,
 }) => {
-  return (
+  const router = useRouter();
+  console.log(goClick) //Devuelve '/LoginPage'
+
+  return (  
     <div
-      className="statedefault-typeprimary"      
-      onClick={goClick}
-    >
-      <div className="go">
+      className={styles.statedefault_typeprimary}      
+      onClick={() => router.push(goClick)}
+    > 
+      <div className={styles.go}>
         {go}
       </div>
     </div>

@@ -1,33 +1,37 @@
+'use client'
 import { useMemo } from "react";
 import StateDefaultTypePrimary from "./StateDefaultTypePrimary";
-import "./Property1Default1.css";
+import { useRouter } from 'next/navigation';
+import styles from "./Property1Default1.module.css";
 
 const Property1Default1 = ({
   prodPhoto,
   produName,
   productDesc,  
 
-  onClickEvent,
+  onClickEv,
 }) => {
+  const router = useRouter();
+  console.log(onClickEv) //Devuelve '/LoginPage'
 
   return (
-    <div className="property-1default1">
+    <div className={styles.property_1default1}>
       <img
-        className="property-1default-item"
+        className={styles.property_1default_item}
         alt=""
         src={prodPhoto}
       />
-      <div className="produ-name-parent">
-        <div className="produ-name">{produName}</div>
-        <div className="lorem-ipsum-dolor1">{productDesc}
+      <div className={styles.produ_name_parent}>
+        <div className={styles.produ_name}>{produName}</div>
+        <div className={styles.lorem_ipsum_dolor1}>{productDesc}
         </div>
         <div
-          className="button-container"          
-          onClick="unset"
+          className={styles.button_container}
+          onClick={() => router.push(onClickEv)}
         >
           <StateDefaultTypePrimary
             go={`Go <~>`}
-            goClick= {onClickEvent}
+            goClick= {onClickEv}
           />
         </div>
       </div>

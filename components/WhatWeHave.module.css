@@ -1,4 +1,4 @@
-.product-parent {
+.product_parent {
   align-self: stretch;
   overflow: hidden;
   display: flex;
@@ -9,7 +9,7 @@
   justify-content: space-around;
   padding: var(--padding-3xs) var(--padding-mini);
 }
-.what-we-have {
+.what_we_have {
   width: unset;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
 }
 
 @media screen and (max-width: 420px) {
-  .product-parent {
+  .product_parent {
     flex-direction: row;
     gap: var(--gap-41xl);
     align-items: flex-start;

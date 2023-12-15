@@ -13,9 +13,9 @@ import styles from "./Prefab.module.css";
 
 const Prefab = () => {
   //const navigate = useNavigate();
-  const router = useRouter();
+  //const router = useRouter();
 
-  const onProjectClick = useCallback(() => {() => router.push('/LoginPage')});
+  //const onProjectClick = useCallback(() => {() => router.push('/LoginPage')});
 
   const onHeaderLinkContainerClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='whoWeAre']");
@@ -100,7 +100,7 @@ const Prefab = () => {
           prodPhot="/rectangle-22@2x.png"
           produName="LiteSite"
           productDesc="Esta sería la descripción de mi producto, si tan solo tuviera uno"
-          onClickEvent={onProjectClick}
+          onClickEvent="/LoginPage"
           prodPhot1="/rectangle-225@2x.png"
           produName1="MiniSite"
           productDesc1="Test"
