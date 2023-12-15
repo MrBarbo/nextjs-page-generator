@@ -48,6 +48,18 @@ const Formulario = () => {
     window.open("github.com/nicolasboattini");
   }, []);
 
+  //Agregar states
+
+  /* const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Obtenga los datos del formulario
+    const data = { name, email };
+
+    // Navegue a una nueva página
+    useNavigate("/resultados", { state: data });
+  };*/
+
   return (
     <div className="formulario">
       <Header

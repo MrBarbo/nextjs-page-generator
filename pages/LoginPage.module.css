@@ -43,16 +43,24 @@
   flex: 1;
 }
 .loginpage {
-  position: relative;
   background-color: #3b3b3b;
-  width: 100%;
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .loginlinks{
   gap: 20px
 }
+.input_element{
+  width: 70px;
+}
+
+.login_div{
+  display: flex;
+  flex-direction: column;
+}
+
+
 @media screen and (max-width: 100%) {
   .frame,
   .loginlinks {

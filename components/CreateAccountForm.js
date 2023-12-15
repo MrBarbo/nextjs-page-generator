@@ -66,9 +66,6 @@ const CreateAccountForm = () => {
           Log in
         </div>        
       </div>
-      <div className="frame1">
-        <div className="create-account">- OR -</div>
-      </div>
     </div>
   );
 };

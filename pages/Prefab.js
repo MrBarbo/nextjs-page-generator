@@ -10,6 +10,9 @@ import Footer from "../components/Footer";
 import "./Prefab.css";
 
 const Prefab = () => {
+
+//const { name, email } = useRoute().state;
+
   const onHeaderLinkContainerClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='whoWeAre']");
     if (anchor) {
