@@ -9,12 +9,10 @@
   border: 1px solid var(--primary);
   align-items: flex-start;
   justify-content: flex-start;
-  flex: unset;
+  flex: 1;
   width: unset;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
   padding: var(--padding-5xs) var(--padding-base);
   text-align: left;
   font-size: var(--font-size-base);

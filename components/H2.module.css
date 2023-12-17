@@ -1,0 +1,23 @@
+.div2 {
+  position: relative;
+  font-weight: 500;
+}
+.lorem_ipsum_dolor4 {
+  margin-left: 5px;
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+  color: var(--white);
+}
+.h2 {
+  align-self: stretch;
+  z-index: unset;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;  
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--primary);
+  font-family: var(--font-fira-code);
+}
