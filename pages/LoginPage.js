@@ -16,23 +16,21 @@ const LoginPage = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
-  const handleLogin = async() =>{
-    console.log("holaxd1");
+  const handleLogin = async(e) =>{
     try{
-      console.log("holaxd");
+      const params = new URLSearchParams();
+      params.append('username', email);
+      params.append('password', password);
       const response = await axios.post(
-        "/login",
+        "http://localhost:3100/login",
         {
-          email,
-          password,
-        },
-        { baseURL: API_ENDPOINT });
-        console.log(response);
-    }catch(e){
-      
-      throw(e);
+          params
+        },{headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
+        console.log(error.response.data);
+    }catch(error){
+      console.log(error.response.data); 
+      throw(error);
     }
-    
   }
   
 
@@ -46,30 +44,30 @@ const LoginPage = () => {
               placeholder="Nickname"
               value={email}
               onChange={handleEmail}
-              className="input_element"
+              className={styles.input_element}
               type="text"
             />
             <input
               placeholder="Clave"
               value={password}
               onChange={handlePassword}
-              className="input_element"
+              className={styles.input_element}
               type="password"
             />
           </div>
         </div>
-        <div className="frame2">
+        <div className={styles.frame2}>
           <div
-            className="buttoncreateacc"
+            className={styles.buttoncreateacc}
             onClick={() => //meter acá la direccion del register
             router.push('/Formulario')}
           >
-            <div className="create-account">Create Account</div>
+            <div className="create-account">Crear cuenta</div>
           </div>
         </div>
-        <div className="frame3">        
-          <div className="already-have-a">Already have an account?</div>
-          <div className="log-in" onClick={handleLogin}>
+        <div className={styles.frame3}>        
+          <div className="already-have-a">¿Ya tienes una cuenta?</div>
+          <div className={styles.log_in} onClick={handleLogin}>
             Log in
           </div>        
         </div>

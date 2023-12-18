@@ -11,9 +11,10 @@ import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
 import { useRouter } from 'next/navigation';
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 
-import "./Formulario.css";
+import styles from "./Formulario.module.css";
 
 
 
@@ -50,15 +51,25 @@ const Formulario = () => {
 
   //Agregar states
 
-  /* const handleSubmit = (e) => {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const handlePageName = (e) => {
+    setName(e.target.value);
+  };
+  const handleDescription = (e) => {
+    setDescription(e.target.value);
+  };
+
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Obtenga los datos del formulario
-    const data = { name, email };
+    const data = { name, description };
 
     // Navegue a una nueva página
     useNavigate("/resultados", { state: data });
-  };*/
+  };
 
   return (
     <div className="formulario">
@@ -70,6 +81,21 @@ const Formulario = () => {
         headerLinkCursor="pointer"
       />       
       <main className="input-parent">
+
+        <input
+              placeholder="Desc"
+              value={description}
+              onChange={handleDescription}
+              className={styles.input_element}
+              type="text"
+            />
+            <input
+              placeholder="Name"
+              value={name}
+              onChange={handlePageName}
+              className={styles.input_element}
+              type="text"
+            />
         <Input
           inputPlaceholder="Company Name / Page Title"          
           inputLabel="Text goes here..."

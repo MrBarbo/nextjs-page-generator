@@ -6,12 +6,13 @@ import WhatWeOffer from "../components/WhatWeOffer";
 import WhatWeHave from "../components/WhatWeHave";
 import WhatWeDo from "../components/WhatWeDo";
 import Footer from "../components/Footer";
+import { useRoute } from "react-router-dom";
 
 import "./Prefab.css";
 
 const Prefab = () => {
 
-//const { name, email } = useRoute().state;
+  const { name, desc } = useRoute().state;
 
   const onHeaderLinkContainerClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='whoWeAre']");
@@ -48,7 +49,7 @@ const Prefab = () => {
         <WhoWeAre
           textHeader={
             
-              "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+              name
               
             }
           textHeaderColor={
@@ -58,7 +59,7 @@ const Prefab = () => {
             }
           textHeaderCont={
             
-            "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+            desc
             
             }
           image="/image1@2x.png"

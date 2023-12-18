@@ -52,12 +52,56 @@
   gap: 20px
 }
 .input_element{
-  width: 70px;
+  width: 400px;
+  height: 40px;
+  color: #3b3b3b;
 }
 
 .login_div{
   display: flex;
   flex-direction: column;
+}
+.buttoncreateacc{
+  margin-top: 10px;
+  background-color:yellow;
+  justify-content: center;
+  text-align: center;
+  cursor:pointer;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.buttoncreateacc:hover{
+  background-color: rgba(255, 255, 0, 0.573);
+}
+
+.frame2{
+  justify-content: center;
+  text-align: center;
+}
+
+.frame3{
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.log_in{
+  margin-top: 10px;
+  background-color:whitesmoke;
+  justify-content: center;
+  text-align: center;
+  cursor:pointer;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.log_in:hover{
+  background-color: rgba(215, 215, 203, 0.573);
 }
 
 

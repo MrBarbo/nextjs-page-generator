@@ -40,3 +40,10 @@
   gap: var(--gap-5xl);
 }
 
+.input_element{
+  width: 400px;
+  height: 40px;
+  color: #3b3b3b;
+  margin-top: 70px;
+}
+
