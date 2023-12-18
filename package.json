@@ -11,6 +11,9 @@
   "dependencies": {
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.14.20",
+    "amazon-cognito-identity-js": "^6.3.7",
+    "aws-sdk": "^2.1520.0",
+    "axios": "^1.6.2",
     "mui": "^0.0.1",
     "next": "14.0.3",
     "react": "^18.2.0",

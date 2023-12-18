@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRouter } from 'next/navigation';
+import axios from "axios";
 import styles from "./LoginPage.module.css";
-import next from "next";
+const API_ENDPOINT = `http://localhost:3100`;
 
 const LoginPage = () => {
 
@@ -15,6 +16,24 @@ const LoginPage = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+  const handleLogin = async() =>{
+    console.log("holaxd1");
+    try{
+      console.log("holaxd");
+      const response = await axios.post(
+        "/login",
+        {
+          email,
+          password,
+        },
+        { baseURL: API_ENDPOINT });
+        console.log(response);
+    }catch(e){
+      
+      throw(e);
+    }
+    
+  }
   
 
   return (
@@ -24,7 +43,7 @@ const LoginPage = () => {
         <div className={styles.frame}>
           <div className={styles.content}>
             <input
-              placeholder="Email"
+              placeholder="Nickname"
               value={email}
               onChange={handleEmail}
               className="input_element"
@@ -50,8 +69,7 @@ const LoginPage = () => {
         </div>
         <div className="frame3">        
           <div className="already-have-a">Already have an account?</div>
-          <div className="log-in" onClick={() => //meter aca la direccion del login
-            router.push('/Formulario')}>
+          <div className="log-in" onClick={handleLogin}>
             Log in
           </div>        
         </div>
