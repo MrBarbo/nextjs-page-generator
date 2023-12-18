@@ -17,19 +17,35 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
   const handleLogin = async(e) =>{
-    try{
-      const params = new URLSearchParams();
-      params.append('username', email);
-      params.append('password', password);
+    try{      
       const response = await axios.post(
         "http://localhost:3100/login",
+        new URLSearchParams({
+          'username': email,
+          'password': password,
+        }),
         {
-          params
-        },{headers: {'Content-Type': 'application/x-www-form-urlencoded'}});
-        console.log(error.response.data);
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      );
+        console.log(response.data);
+
+        if (response.status === 350) {
+          router.push('/Formulario');
+        }
     }catch(error){
-      console.log(error.response.data); 
-      throw(error);
+      if (error.response) {
+        if (error.response.status === 350) {
+          router.push('/Formulario');
+        }
+        console.log(error.response.data.message);
+        throw(error.response.data.message);
+      } else {
+        console.log(error.message);
+        throw(error.message);
+        }
     }
   }
   
