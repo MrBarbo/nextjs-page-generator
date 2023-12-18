@@ -44,12 +44,12 @@ const LoginPage = () => {
         console.log(error.response.data.message);
         throw(error.response.data.message);
       } else {
+        //else agregar error de usuario incorrecto
         console.log(error.message);
         throw(error.message);
         }
     }
-  }
-  
+  } 
 
   return (
     <div className={styles.loginpage}>
