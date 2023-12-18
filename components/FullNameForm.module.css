@@ -1,0 +1,32 @@
+.full_name {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.full_name,
+.text {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+}
+.fullname_input,
+.nameinp {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.nameinp {
+  border-radius: var(--br-xl);
+  background-color: #3b3b3b;
+  padding: 0 var(--padding-9xs);
+}
+.fullname_input {
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-100);
+  font-family: var(--font-poppins);
+}

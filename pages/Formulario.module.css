@@ -1,4 +1,4 @@
-.input-group {
+.input_group {
   align-self: stretch;
   overflow: hidden;
   display: flex;
@@ -7,7 +7,7 @@
   justify-content: flex-start;
   gap: var(--gap-8xl);
 }
-.button-frame {
+.button_frame {
   align-self: stretch;
   overflow: hidden;
   display: flex;
@@ -16,7 +16,7 @@
   justify-content: flex-start;
   padding: var(--padding-3xs);
 }
-.input-parent {
+.input_parent {
   align-self: stretch;
   margin-top: 5em;
   flex: 1;

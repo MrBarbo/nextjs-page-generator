@@ -1,0 +1,106 @@
+.title {
+  align-self: stretch;
+  flex: 1;
+  position: relative;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame1 {
+  overflow: hidden;
+  flex-direction: column;
+}
+.buttoncreateacc,
+.create_account,
+.frame1,
+.frame2 {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.create_account {
+  position: relative;
+  font-weight: 500;
+}
+.buttoncreateacc,
+.frame2 {
+  flex-direction: column;
+}
+.buttoncreateacc {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-mediumseagreen);
+  cursor: pointer;
+}
+.buttoncreateacc:hover {
+  background-color: var(--color-seagreen-100);
+}
+.buttoncreateacc:active {
+  background-color: var(--color-darkolivegreen-100);
+}
+.frame2 {
+  overflow: hidden;
+  padding: var(--padding-5xs) 0;
+}
+.already_have_a,
+.text1 {
+  position: relative;
+}
+.already_have_a,
+.log_in {
+  align-self: center;
+  flex: 1;
+  display: flex;
+  align-items: center;  
+}
+.log_in:hover {
+  color: var(--color-seagreen-200);
+}
+.log_in:active {
+  color: var(--color-darkolivegreen-200);
+}
+.log_in,
+.text2 {
+  position: relative;
+  color: var(--color-mediumseagreen);
+  text-align: left;
+  cursor: pointer;
+}
+.loginform {
+  align-self: stretch;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  text-align: right;
+  font-size: var(--font-size-5xl);
+  color: var(--color-gray-100);
+}
+.loginform {
+  flex-direction: column;
+  gap: var(--gap-11xl);
+  text-align: center;
+  font-size: var(--font-size-7xl);
+  color: var(--head-and-foot);
+  font-family: var(--font-poppins);
+}
+.log_in{
+  overflow: visible;
+  text-overflow: visible;
+}
+.frame3{
+  overflow: visible;
+  flex-direction: column;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  text-align: right;
+  font-size: var(--font-size-5xl);
+  color: var(--color-gray-100);
+}
