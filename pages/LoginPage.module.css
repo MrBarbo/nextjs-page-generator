@@ -1,4 +1,4 @@
-.frame_icon {
+.frameicon {
   max-width: 43%;
   overflow: hidden;
   max-height: 43%;
@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 0px 0px 73px 0px;
+}
+.logError{
+  color:#ff5b5b !important;
 }
 .content,
 .frame,
@@ -51,13 +54,13 @@
 .loginlinks{
   gap: 20px
 }
-.input_element{
+.inputelement{
   width: 400px;
   height: 40px;
   color: #3b3b3b;
 }
 
-.login_div{
+.logindiv{
   display: flex;
   flex-direction: column;
 }
@@ -88,7 +91,7 @@
   
 }
 
-.log_in{
+.login{
   margin-top: 10px;
   background-color:whitesmoke;
   justify-content: center;
@@ -100,7 +103,7 @@
   transition-duration: 0.4s;
 }
 
-.log_in:hover{
+.login:hover{
   background-color: rgba(215, 215, 203, 0.573);
 }
 

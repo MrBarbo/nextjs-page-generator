@@ -1,28 +1,52 @@
 "use client";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useRouter } from 'next/navigation';
 import axios from "axios";
 import styles from "./LoginPage.module.css";
+import "../app/globals.css";
 const API_ENDPOINT = `http://localhost:3100`;
 
 const LoginPage = () => {
 
   const router = useRouter();
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
+  const [visBut, setVisBut] = useState(true);
+  const [content, setContent] = useState('¿Aún no posees cuenta?');
+  const [content2, setContent2] = useState('Regístrate');
+  const [errorCont, setErrorCont] = useState("");
+  const [errorVis, setErrorVis] = useState(false);
+  const handleContent2 = () => {
+    setContent2(content2 === 'Regístrate' ? 'Loguéate' : 'Regístrate');
+  };
+  const handleContent = () => {
+    setContent(content === '¿Aún no posees cuenta?' ? '¿Ya tienes una cuenta?' : '¿Aún no posees cuenta?');
+  };
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+  const switchMode = (e) => {
+    setVisBut(!visBut)
+    handleContent2();
+    handleContent();
+    setIsVisible(false);
+    //setContent(content === '¿Aún no posees cuenta?' ? '¿Ya tienes una cuenta?' : '¿Aún no posees cuenta?');
+    //setContent2(content2 === 'Regístrate' ? 'Loguéate' : 'Regístrate');
+  };
   const handleLogin = async(e) =>{
     try{      
       const response = await axios.post(
-        "http://localhost:3100/login",
+        "https://backend-supersite-production.up.railway.app/login",
         new URLSearchParams({
-          'username': email,
+          'username': username,
           'password': password,
         }),
         {
@@ -41,51 +65,96 @@ const LoginPage = () => {
         if (error.response.status === 350) {
           router.push('/Formulario');
         }
-        console.log(error.response.data.message);
+        setIsVisible(true);
+        console.log("estoy aca");
+        console.log(error.response.data);
         throw(error.response.data.message);
-      } else {
-        //else agregar error de usuario incorrecto
+      } else {        
         console.log(error.message);
         throw(error.message);
         }
     }
   } 
 
+  const handleRegister = async(e) =>{
+    try{      
+      const response = await axios.post(
+        "https://backend-supersite-production.up.railway.app/register",
+        new URLSearchParams({
+          'username': username,
+          'password': password,
+          'email': email,
+        }),
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      );
+        console.log(response.data);
+
+        if (response.status === 200) {
+          router.push('/Formulario');
+        }
+    }catch(error){
+      if (error.response) {
+        if (error.response.status === 200) {
+          router.push('/Formulario');
+        }
+        //agregar los errores
+        setErrorVis(true);
+        setErrorCont(error.response.data.error);        
+
+        console.log(error.response.data.error);
+
+        throw(error.response.data.message);
+      } else {                
+        throw(error.message);
+        }
+    }
+  }
   return (
     <div className={styles.loginpage}>
-      <img className={styles.frame_icon} alt="" src="/frame@2x.png" />
-      <div className="login_div">
+      <img className={styles.frameicon} alt="" src="/frame@2x.png" />
+      <div className={styles.logindiv}>
         <div className={styles.frame}>
-          <div className={styles.content}>
+          <div className={styles.content}>            
             <input
-              placeholder="Nickname"
-              value={email}
-              onChange={handleEmail}
-              className={styles.input_element}
+              placeholder="Usuario"
+              value={username}
+              onChange={handleUsername}
+              className={styles.inputelement}
               type="text"
             />
             <input
               placeholder="Clave"
               value={password}
               onChange={handlePassword}
-              className={styles.input_element}
+              className={styles.inputelement}
               type="password"
             />
+            { !visBut && <input
+              placeholder="Correo Electrónico"
+              value={email}
+              onChange={handleEmail}
+              className={styles.inputelement}
+              type="email"
+            /> }
           </div>
         </div>
         <div className={styles.frame2}>
-          <div
-            className={styles.buttoncreateacc}
-            onClick={() => //meter acá la direccion del register
-            router.push('/Formulario')}
-          >
-            <div className="create-account">Crear cuenta</div>
+          {errorVis && < div className={styles.logError}> {errorCont} </div>}
+          {isVisible && <div className={styles.logError}> Usuario o Contraseña incorrectos</div>}
+          <div className={styles.buttoncreateacc}>            
+            { !visBut && <div className={styles.createaccount} onClick={handleRegister}>Registrarse</div> }
+            { visBut && <div className={styles.createaccount} onClick={handleLogin}>Ingresar</div> }
           </div>
         </div>
         <div className={styles.frame3}>        
-          <div className="already-have-a">¿Ya tienes una cuenta?</div>
-          <div className={styles.log_in} onClick={handleLogin}>
-            Log in
+          <div className={styles.alreadyhavea}>{content}</div>
+          <div className={styles.login} 
+            onClick={switchMode}>
+            {content2}
           </div>        
         </div>
       </div>

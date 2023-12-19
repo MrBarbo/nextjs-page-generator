@@ -7,6 +7,7 @@ import WhatWeHave from "../components/WhatWeHave";
 import WhatWeDo from "../components/WhatWeDo";
 import Footer from "../components/Footer";
 import { useRoute } from "react-router-dom";
+import "../app/globals.css";
 
 import styles from "./Prefab.module.css";
 

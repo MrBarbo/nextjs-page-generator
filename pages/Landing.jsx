@@ -10,7 +10,7 @@ import WhatWeDo from "../components/WhatWeDo";
 import Footer from "../components/Footer";
 import { useRouter } from 'next/navigation';
 import styles from "./Prefab.module.css";
-
+import "../app/globals.css";
 const Landing = () => {
 //const navigate = useNavigate();
   //const router = useRouter();

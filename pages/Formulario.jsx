@@ -12,6 +12,7 @@ import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
 import { useRouter } from 'next/navigation';
 import Footer from "../components/Footer";
 import { useState } from "react";
+import "../app/globals.css";
 
 
 import styles from "./Formulario.module.css";
