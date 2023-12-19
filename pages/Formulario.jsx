@@ -53,11 +53,15 @@ const Formulario = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [mission, setMission] = useState("");
   const handlePageName = (e) => {
     setName(e.target.value);
   };
   const handleDescription = (e) => {
     setDescription(e.target.value);
+  };
+  const handleMission = (e) => {
+    setMission(e.target.value);
   };
   const link = "/"+name;
   const handleSubmit = () => {
@@ -65,7 +69,8 @@ const Formulario = () => {
       pathname: "/Prefab",
       query:{
         name,
-        description
+        description,
+        mission
         }
     },link
     );
@@ -81,17 +86,25 @@ const Formulario = () => {
         headerLinkCursor="pointer"
       />             
       <main className={styles.input_parent}>
-          <input
-              placeholder="Desc"
+          
+            <input
+              placeholder="Nombre suyo o de su proyecto/empresa"
+              value={name}
+              onChange={handlePageName}
+              className={styles.input_element}
+              type="text"
+            />
+            <input
+              placeholder="Descripción suya o de su proyecto/empresa"
               value={description}
               onChange={handleDescription}
               className={styles.input_element}
               type="text"
             />
             <input
-              placeholder="Name"
-              value={name}
-              onChange={handlePageName}
+              placeholder="Misión(si es empresa/organización)"
+              value={mission}
+              onChange={handleMission}
               className={styles.input_element}
               type="text"
             />

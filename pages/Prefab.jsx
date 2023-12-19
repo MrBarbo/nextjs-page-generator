@@ -17,7 +17,7 @@ const Prefab = () => {
 
   const router = useRouter();
   const  {
-    query: { name, description }
+    query: { name, description, mission }
   } = router;
 
   const onHeaderLinkContainerClick = useCallback(() => {
@@ -45,12 +45,6 @@ const Prefab = () => {
 
   return (
     <div className={styles.prefab}>
-      <Header
-        showFrameDiv
-        showHeaderLink
-        headerLinkCursor="pointer"
-        onHeaderLinkContainerClick={onHeaderLinkContainerClick}
-      />
       <div className={styles.who_we_are_group}>
         <WhoWeAre
           textHeader={
@@ -65,20 +59,20 @@ const Prefab = () => {
             }
           textHeaderCont={
             
-              description
+              ""
             
             }
           image="/image1@2x.png"
           propParagraph={
             
-            "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+            description
             
             }
         />
         <OurValues
           propMis={
 
-              "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+              mission
 
           }
           propVis={
