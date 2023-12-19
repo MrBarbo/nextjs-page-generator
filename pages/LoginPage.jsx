@@ -6,9 +6,10 @@ import styles from "./LoginPage.module.css";
 import "../app/globals.css";
 const API_ENDPOINT = `http://localhost:3100`;
 
-const LoginPage = () => {
-
+const LoginPage = () => {  
+    
   const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -37,10 +38,29 @@ const LoginPage = () => {
     setVisBut(!visBut)
     handleContent2();
     handleContent();
-    setIsVisible(false);
-    //setContent(content === '¿Aún no posees cuenta?' ? '¿Ya tienes una cuenta?' : '¿Aún no posees cuenta?');
-    //setContent2(content2 === 'Regístrate' ? 'Loguéate' : 'Regístrate');
+    setIsVisible(false);    
   };
+
+  async function translateErrorMessage(errVar, targetLang) {
+    const response = await axios.post(
+      "https://api-free.deepl.com/v2/translate", 
+      new URLSearchParams({
+      text: errVar,
+      target_lang: targetLang,
+    }), 
+    {
+      headers: { 
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': '230a466c-a529-44ca-a43d-2deabe774070:fx',
+      },
+    }
+  );
+  
+    return response.data.translations[0].text;
+  }
+
+  
+
   const handleLogin = async(e) =>{
     try{      
       const response = await axios.post(
@@ -101,10 +121,15 @@ const LoginPage = () => {
         if (error.response.status === 200) {
           router.push('/Formulario');
         }
-        //agregar los errores
+        
         setErrorVis(true);
         setErrorCont(error.response.data.error);        
-
+        //----------------------
+        //este translate no anda por politicas de CORS, hay que redireccionar la request al backend
+        //const translatedError = await translateErrorMessage(error.response.data.error, 'ES'); 
+        //
+        //setErrorCont(translatedError);
+        //----------------------
         console.log(error.response.data.error);
 
         throw(error.response.data.message);

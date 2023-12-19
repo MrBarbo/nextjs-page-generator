@@ -120,27 +120,7 @@ const Prefab = () => {
           prodPhot5="/rectangle-227@2x.png"
           produName5="SuperSite"
           productDesc5="Test"          
-        />
-        <WhatWeDo
-          projFoto="/rectangle-22@2x.png"
-          projName="Nombre de mi Posible proyecto "
-          projDesc="Esta sería la descripción de mi proyecto, si tan solo tuviera uno"
-          projFoto1="/rectangle-225@2x.png"
-          projName1="project Name"
-          projDesc1=""
-          projFoto2="/rectangle-227@2x.png"
-          projName2="project Name"
-          projDesc2=""
-          projFoto3="/rectangle-22@2x.png"
-          projName3="project Name"
-          projDesc3=""
-          projFoto4="/rectangle-225@2x.png"
-          projName4="project Name"
-          projDesc4=""
-          projFoto5="/rectangle-227@2x.png"
-          projName5="project Name"
-          projDesc5=""          
-        />
+        />        
       </div>
       <Footer
         socialIcon="/linkedin1.svg"
