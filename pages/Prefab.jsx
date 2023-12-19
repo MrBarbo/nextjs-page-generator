@@ -17,7 +17,7 @@ const Prefab = () => {
 
   const router = useRouter();
   const  {
-    query: { name, description, mission }
+    query: { name, description, mission, vission, objectives }
   } = router;
 
   const onHeaderLinkContainerClick = useCallback(() => {
@@ -77,12 +77,12 @@ const Prefab = () => {
           }
           propVis={
 
-            "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+              vission
  
           }
           propObj={
 
-            "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+              objectives
  
           }
         />

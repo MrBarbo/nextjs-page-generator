@@ -6,7 +6,10 @@ const OurValues = ({
   propMis,
   propVis, 
   propObj,  
-}) => {  
+}) => {
+  if(propMis==""&&propVis==""&&propObj==""){
+    return null;
+  }  
 
   return (
     <div className={styles.our_values}>

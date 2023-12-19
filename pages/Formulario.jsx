@@ -54,6 +54,8 @@ const Formulario = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [mission, setMission] = useState("");
+  const [vission, setVission] = useState("");
+  const [objectives, setObjectives] = useState("");
   const handlePageName = (e) => {
     setName(e.target.value);
   };
@@ -63,6 +65,12 @@ const Formulario = () => {
   const handleMission = (e) => {
     setMission(e.target.value);
   };
+  const handleVission = (e) => {
+    setVission(e.target.value);
+  };
+  const handleObjectives = (e) => {
+    setObjectives(e.target.value);
+  };
   const link = "/"+name;
   const handleSubmit = () => {
     Router.push({
@@ -70,7 +78,9 @@ const Formulario = () => {
       query:{
         name,
         description,
-        mission
+        mission,
+        vission,
+        objectives
         }
     },link
     );
@@ -105,6 +115,20 @@ const Formulario = () => {
               placeholder="Misión(si es empresa/organización)"
               value={mission}
               onChange={handleMission}
+              className={styles.input_element}
+              type="text"
+            />
+            <input
+              placeholder="Visión(si es empresa/organización)"
+              value={vission}
+              onChange={handleVission}
+              className={styles.input_element}
+              type="text"
+            />
+            <input
+              placeholder="Objetivos(si es empresa/organización)"
+              value={objectives}
+              onChange={handleObjectives}
               className={styles.input_element}
               type="text"
             />
