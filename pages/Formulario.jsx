@@ -1,7 +1,6 @@
 "use client";
 import { useCallback } from "react";
 import { TextField, Checkbox, FormControlLabel } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Input from "../components/Input";
 import WhatWeOffer from "../components/WhatWeOffer";
@@ -13,7 +12,7 @@ import { useRouter } from 'next/navigation';
 import Footer from "../components/Footer";
 import { useState } from "react";
 import "../app/globals.css";
-
+import Router from "next/router"
 
 import styles from "./Formulario.module.css";
 
@@ -22,7 +21,7 @@ import styles from "./Formulario.module.css";
 const Formulario = () => {
   
 
-  const router = useRouter();
+  
 
   /*const onFrameContainer18Click = useCallback(() => {
     navigate("/prefab1");
@@ -32,7 +31,7 @@ const Formulario = () => {
     navigate("/prefab1");
   }, [navigate]);*/
 
-  const onServicesContainer3Click = useCallback(() => {() => router.push('/Prefab')});
+  const onServicesContainer3Click = useCallback(() => {() => Router.push('/Prefab')});
 
   const onEmailIcon1Click = useCallback(() => {
     window.location.href = "mailto:nicoboattini@gmail.com";
@@ -60,16 +59,16 @@ const Formulario = () => {
   const handleDescription = (e) => {
     setDescription(e.target.value);
   };
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Obtenga los datos del formulario
-    const data = { name, description };
-
-    // Navegue a una nueva página
-    useNavigate("/resultados", { state: data });
+  const link = "/"+name;
+  const handleSubmit = () => {
+    Router.push({
+      pathname: "/Prefab",
+      query:{
+        name,
+        description
+        }
+    },link
+    );
   };
 
   return (
@@ -295,7 +294,7 @@ const Formulario = () => {
             inputTextHereDisplay="unset"
           />
         </div>
-        <div className={styles.button_frame} onClick={() => router.push('/Prefab')}>
+        <div className={styles.button_frame} onClick={handleSubmit}>
           <StateDefaultTypePrimary
             go="SuperSitea!"
             stateDefaultTypePrimaryAlignItems="center"

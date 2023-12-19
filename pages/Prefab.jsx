@@ -1,3 +1,4 @@
+"use client";
 import { useCallback } from "react";
 import Header from "../components/Header";
 import WhoWeAre from "../components/WhoWeAre";
@@ -6,14 +7,18 @@ import WhatWeOffer from "../components/WhatWeOffer";
 import WhatWeHave from "../components/WhatWeHave";
 import WhatWeDo from "../components/WhatWeDo";
 import Footer from "../components/Footer";
-import { useRoute } from "react-router-dom";
+import { useRouter } from "next/router"
+import Link from "next/link";
 import "../app/globals.css";
 
 import styles from "./Prefab.module.css";
 
 const Prefab = () => {
 
-  const { name, desc } = useRoute().state;
+  const router = useRouter();
+  const  {
+    query: { name, description }
+  } = router;
 
   const onHeaderLinkContainerClick = useCallback(() => {
     const anchor = document.querySelector("[data-scroll-to='whoWeAre']");
@@ -55,12 +60,12 @@ const Prefab = () => {
             }
           textHeaderColor={
             
-            "<LoremIpsumshdbsbbsbsbsbsbsbbs"
+              ""
               
             }
           textHeaderCont={
             
-            desc
+              description
             
             }
           image="/image1@2x.png"
