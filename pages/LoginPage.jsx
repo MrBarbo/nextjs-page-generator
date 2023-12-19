@@ -38,7 +38,9 @@ const LoginPage = () => {
     setVisBut(!visBut)
     handleContent2();
     handleContent();
-    setIsVisible(false);    
+    setIsVisible(false);   
+    setErrorVis (!errorVis);
+    setErrorCont ("");
   };
 
   async function translateErrorMessage(errVar, targetLang) {
