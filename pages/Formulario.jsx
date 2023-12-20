@@ -94,7 +94,7 @@ const Formulario = () => {
   };
   */
 
-  const link = "/"+name;
+  const link = "/"+inputValues.name;
   const handleSubmit = () => {
     Router.push({
       pathname: "/Prefab",
@@ -114,7 +114,7 @@ const Formulario = () => {
   const handleSubmit2 = () => {
     // Use Router.push to navigate to the "/Prefab" page with input values in the query
     Router.push({
-      pathname: "/test", // Make sure to replace "/Prefab" with your actual path
+      pathname: "/Prefab", // Make sure to replace "/Prefab" with your actual path
       query: {
         ...inputValues,
       },
