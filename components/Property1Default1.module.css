@@ -1,0 +1,54 @@
+.property_1default_item {
+  position: relative;
+  width: unset;
+  max-width: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+  height: 201px;
+  object-fit: cover;
+}
+.produ_name {
+  align-self: stretch;
+  position: relative;
+  font-weight: 500;
+}
+.lorem_ipsum_dolor1 {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-base);
+  color: var(--gray);
+}
+.button_container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.produ_name_parent {
+  align-self: stretch;
+  border-top: 1px solid var(--gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+.property_1default1 {
+  border: 1px solid var(--gray);
+  display: flex;
+  width: 332.6px;
+  flex: unset;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0px;
+  gap: var(--gap-mid);
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--white);
+  font-family: var(--font-fira-code);
+}
+.property_1default1:hover{
+  background-color: #e6e6e627;
+}

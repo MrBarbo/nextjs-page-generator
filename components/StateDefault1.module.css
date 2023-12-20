@@ -1,0 +1,22 @@
+.div3 {
+  position: relative;
+  color: var(--primary);
+  font-weight: 500;
+}
+.inicio {
+  position: relative;
+  color: var(--gray);
+  font-weight: 500;
+  cursor: pointer;
+}
+.statedefault1 {
+  display: flex;
+  flex: 1;  
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--primary1);
+  font-family: var(--font-fira-code);
+}

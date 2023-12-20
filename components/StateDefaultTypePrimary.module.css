@@ -1,0 +1,26 @@
+.go {
+  position: relative;
+  font-weight: 500;
+  font-size: var(--font-size-base);
+  text-align: left;
+  flex: unset;
+}
+.statedefault_typeprimary {
+  border: 1px solid var(--primary);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  width: unset;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--white);
+  font-family: var(--font-fira-code);
+  cursor: pointer;
+}
+
+.statedefault_typeprimary:hover{
+  background-color:  var(--primary-hover);
+}

@@ -1,0 +1,49 @@
+.input_group {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-8xl);
+}
+.button_frame {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+}
+.input_parent {
+  align-self: stretch;
+  margin-top: 5em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px var(--padding-182xl);
+  gap: var(--gap-6xl);
+}
+.formulario {
+  position: relative;
+  background-color: var(--background1);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xl);
+}
+
+.input_element{
+  width: 400px;
+  height: 40px;
+  color: #3b3b3b;
+  margin-top: 70px;
+}
+

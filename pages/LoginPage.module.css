@@ -1,4 +1,4 @@
-.frame_icon {
+.frameicon {
   max-width: 43%;
   overflow: hidden;
   max-height: 43%;
@@ -13,6 +13,9 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 0px 0px 73px 0px;
+}
+.logError{
+  color:#ff5b5b !important;
 }
 .content,
 .frame,
@@ -43,16 +46,68 @@
   flex: 1;
 }
 .loginpage {
-  position: relative;
   background-color: #3b3b3b;
-  width: 100%;
+  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .loginlinks{
   gap: 20px
 }
+.inputelement{
+  width: 400px;
+  height: 40px;
+  color: #3b3b3b;
+}
+
+.logindiv{
+  display: flex;
+  flex-direction: column;
+}
+.buttoncreateacc{
+  margin-top: 10px;
+  background-color:yellow;
+  justify-content: center;
+  text-align: center;
+  cursor:pointer;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.buttoncreateacc:hover{
+  background-color: rgba(255, 255, 0, 0.573);
+}
+
+.frame2{
+  justify-content: center;
+  text-align: center;
+}
+
+.frame3{
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.login{
+  margin-top: 10px;
+  background-color:whitesmoke;
+  justify-content: center;
+  text-align: center;
+  cursor:pointer;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 4px;
+  transition-duration: 0.4s;
+}
+
+.login:hover{
+  background-color: rgba(215, 215, 203, 0.573);
+}
+
+
 @media screen and (max-width: 100%) {
   .frame,
   .loginlinks {
