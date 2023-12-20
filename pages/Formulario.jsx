@@ -170,35 +170,35 @@ const Formulario = () => {
         <Input
           inputId="1"
           inputName="name"  
-          inputTitle="Company Name / Page Title"          
+          inputTitle="Titulo/Nombre"          
           inputLabel="Text goes here..."          
           onInputChange={(value) => handleInputChange('name', value)}
         />
         <Input
           inputId="2"
           inputName="description"  
-          inputTitle="Description"
+          inputTitle="Descripcion"
           inputLabel="Text goes here..."
           onInputChange={(value) => handleInputChange('description', value)}
         />
         <Input
           inputId="3"
           inputName="mission"  
-          inputTitle="Mission"
+          inputTitle="Mision"
           inputLabel="Text goes here..." 
           onInputChange={(value) => handleInputChange('mission', value)}           
         />
         <Input
           inputId="4"
           inputName="vission"  
-          inputTitle="Vission"
+          inputTitle="Vision"
           inputLabel="Text goes here..."            
           onInputChange={(value) => handleInputChange('vission', value)}
         />
         <Input
           inputId="5"
           inputName="objectives"  
-          inputTitle="Objetives"          
+          inputTitle="Objetivos"          
           inputLabel="Text goes here..."  
           onInputChange={(value) => handleInputChange('objectives', value)}
         />
