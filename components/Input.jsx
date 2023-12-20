@@ -3,16 +3,26 @@ import { TextField } from "@mui/material";
 import H2 from "./H2";
 import styles from "./Input.module.css";
 import { common } from "@mui/material/colors";
+import React, { useState } from 'react';
+
 
 const Input = ({
   inputName,
-  inputId,
-  
+  inputId,  
   inputLabel,
   inputType,
-  inputTitle,  
+  inputTitle,
 
+  onInputChange 
 }) => {
+  //Manejador de contenido del texto
+  const handleChange = (event) => {
+    const value = event.target.value;
+
+    // Call the callback function to pass the value to the parent component
+    onInputChange(value);
+  };
+
   return (
     <div className={styles.input}>
       <H2
@@ -29,8 +39,8 @@ const Input = ({
           type={inputType} // Establecer el tipo a "password" para ocultar el contenido
           multiline 
           maxRows={2}
-          variant="standard"
-                   
+          variant="standard"          
+          onChange={handleChange} // Add the onChange handler
         />
         </div>
       </div>

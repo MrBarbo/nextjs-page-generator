@@ -51,11 +51,32 @@ const Formulario = () => {
 
   //Agregar states
 
+  //--------------
+  //Se agrega un handler para todos los componentes tipo Input y se guardan los valores para cada uno
+  //para emplearlo, pasar como prop al componente lo siguiente:
+  //onInputChange={(value) => handleInputChange('name', value)} donde name es la clave que identificará el contenido
+  const [inputValues, setInputValues] = useState('');
+
+  const handleInputChange = (inputName, value) => {
+    setInputValues((prevValues) => ({
+      ...prevValues,
+      [inputName]: value,
+    })    
+    );    
+  };
+
+
+  //--------------
+
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [mission, setMission] = useState("");
   const [vission, setVission] = useState("");
   const [objectives, setObjectives] = useState("");
+
+
+  //Funcion para enviar los datos al servidor
+  /*
   const handlePageName = (e) => {
     setName(e.target.value);
   };
@@ -71,6 +92,8 @@ const Formulario = () => {
   const handleObjectives = (e) => {
     setObjectives(e.target.value);
   };
+  */
+
   const link = "/"+name;
   const handleSubmit = () => {
     Router.push({
@@ -80,9 +103,22 @@ const Formulario = () => {
         description,
         mission,
         vission,
-        objectives
+        objectives        
         }
     },link
+    );
+  };
+
+
+  //Manejador para mandar contenido por query a la pagina generada
+  const handleSubmit2 = () => {
+    // Use Router.push to navigate to the "/Prefab" page with input values in the query
+    Router.push({
+      pathname: "/test", // Make sure to replace "/Prefab" with your actual path
+      query: {
+        ...inputValues,
+      },
+    }
     );
   };
 
@@ -95,9 +131,8 @@ const Formulario = () => {
         frameDivGap="43px"
         headerLinkCursor="pointer"
       />             
-      <main className={styles.input_parent}>
-          
-            <input
+      <main className={styles.input_parent}>          
+            {/* <input
               placeholder="Nombre suyo o de su proyecto/empresa"
               value={name}
               onChange={handlePageName}
@@ -131,68 +166,41 @@ const Formulario = () => {
               onChange={handleObjectives}
               className={styles.input_element}
               type="text"
-            />
+            />*/}
         <Input
-          inputPlaceholder="Company Name / Page Title"          
-          inputLabel="Text goes here..."
           inputId="1"
-          inputName="nombre"
-          inputAlignSelf="stretch"
-          h2AlignSelf="stretch"
-          frameDivBoxSizing="border-box"
-          inputTextHereDisplay="flex"
+          inputName="name"  
+          inputTitle="Company Name / Page Title"          
+          inputLabel="Text goes here..."          
+          onInputChange={(value) => handleInputChange('name', value)}
         />
         <Input
-          inputPlaceholder="Description"
-          showH2
-          inputLabel
-          inputId
-          inputName          
-          
-          inputTextHereFontSize="unset"
-          inputTextHereFontFamily="unset"
-          inputTextHereColor="unset"
-          inputTextHereTextAlign="unset"
-          inputTextHereDisplay="flex"
+          inputId="2"
+          inputName="description"  
+          inputTitle="Description"
+          inputLabel="Text goes here..."
+          onInputChange={(value) => handleInputChange('description', value)}
         />
         <Input
-          inputPlaceholder="Mission"
-          showH2
-          inputWidth="unset"
-          inputAlignSelf="stretch"
-          h2AlignSelf="stretch"
-          frameDivBoxSizing="border-box"
-          inputTextHereFontSize="unset"
-          inputTextHereFontFamily="unset"
-          inputTextHereColor="unset"
-          inputTextHereTextAlign="unset"
-          inputTextHereDisplay="flex"
+          inputId="3"
+          inputName="mission"  
+          inputTitle="Mission"
+          inputLabel="Text goes here..." 
+          onInputChange={(value) => handleInputChange('mission', value)}           
         />
         <Input
-          inputPlaceholder="Vission"
-          showH2
-          inputWidth="unset"
-          inputAlignSelf="stretch"
-          h2AlignSelf="stretch"
-          frameDivBoxSizing="border-box"
-          inputTextHereFontSize="unset"
-          inputTextHereFontFamily="unset"
-          inputTextHereColor="unset"
-          inputTextHereTextAlign="unset"
-          inputTextHereDisplay="flex"
+          inputId="4"
+          inputName="vission"  
+          inputTitle="Vission"
+          inputLabel="Text goes here..."            
+          onInputChange={(value) => handleInputChange('vission', value)}
         />
         <Input
-          inputPlaceholder="Objetives"
-          showH2
-          inputWidth="unset"
-          inputAlignSelf="stretch"
-          h2AlignSelf="stretch"
-          frameDivBoxSizing="border-box"
-          inputTextHereFontSize="unset"
-          inputTextHereFontFamily="unset"
-          inputTextHereColor="unset"
-          inputTextHereTextAlign="unset"
-          inputTextHereDisplay="flex"
+          inputId="5"
+          inputName="objectives"  
+          inputTitle="Objetives"          
+          inputLabel="Text goes here..."  
+          onInputChange={(value) => handleInputChange('objectives', value)}
         />
         <WhatWeOffer
           serviceImageUrl="+"
@@ -219,7 +227,7 @@ const Formulario = () => {
           serviceNameFontFamily1="unset"
           serviceNameColor1="unset"
           serviceNameTextAlign1="unset"
-          serviceNameFontWeight1="unset"
+          serviceNameFontWeight1="unset"  
           loremIpsumDolorFontSize1="unset"
           loremIpsumDolorDisplay1="unset"
           loremIpsumDolorFontFamily1="unset"
@@ -331,7 +339,7 @@ const Formulario = () => {
             inputTextHereDisplay="unset"
           />
         </div>
-        <div className={styles.button_frame} onClick={handleSubmit}>
+        <div className={styles.button_frame} onClick={handleSubmit2}>
           <StateDefaultTypePrimary
             go="SuperSitea!"
             stateDefaultTypePrimaryAlignItems="center"
@@ -341,7 +349,7 @@ const Formulario = () => {
             goFontSize="48px"
             goTextAlign="center"
             goFlex="1"
-            goClick={onServicesContainer3Click}
+            //goClick={onServicesContainer3Click}
             goCursor="pointer"
           />
         </div>

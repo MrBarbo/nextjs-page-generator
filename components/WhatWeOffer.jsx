@@ -3,7 +3,7 @@ import H2 from "./H2";
 import StateHoverTypeForm from "./StateHoverTypeForm";
 import styles from "./WhatWeOffer.module.css";
 
-const WhatWeOffer = ({
+const   WhatWeOffer = ({
   serviceName,
   serviceDesc,
   serviceName1,
