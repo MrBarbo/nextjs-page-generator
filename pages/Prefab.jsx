@@ -17,15 +17,11 @@ const Prefab = () => {
 
   const router = useRouter();
   const  {
-    query: { name, description, mission, vission, objectives }
+    query: { name, description, mission, vission, objectives, service1, service2,
+    service3, service4,
+  service1d,service2d,service3d,service4d }
   } = router;
 
-  const onHeaderLinkContainerClick = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='whoWeAre']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
 
   const onEmailIconClick = useCallback(() => {
     window.location.href = "mailto:nicoboattini@gmail.com";
@@ -62,7 +58,7 @@ const Prefab = () => {
               ""
             
             }
-          image="/image1@2x.png"
+          image="/image1@2x.png"//ver como generar algo acá
           propParagraph={
             
             description
@@ -87,14 +83,14 @@ const Prefab = () => {
           }
         />
         <WhatWeOffer
-          serviceName="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceDesc="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceName1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceDesc1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceName2="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceDesc2="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceName3="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          serviceDesc3="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          serviceName= {service1}
+          serviceDesc= {service1d}
+          serviceName1={service2}
+          serviceDesc1={service2d}
+          serviceName2={service3}
+          serviceDesc2={service3d}
+          serviceName3={service4}
+          serviceDesc3={service4d}
         />
         <WhatWeHave
           prodPhot="/rectangle-22@2x.png"

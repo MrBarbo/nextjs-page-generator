@@ -1,9 +1,7 @@
-import { useMemo } from "react";
 import { TextField } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import H2 from "./H2";
 import styles from "./Input.module.css";
-import { common } from "@mui/material/colors";
-import React, { useState } from 'react';
 
 
 const Input = ({
@@ -23,6 +21,12 @@ const Input = ({
     onInputChange(value);
   };
 
+  const theme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
+
   return (
     <div className={styles.input}>
       <H2
@@ -30,7 +34,9 @@ const Input = ({
       />
       <div className={styles.input_text_here_wrapper} >
         <div className={styles.input_text_here}>
-        <TextField          
+        <ThemeProvider theme={theme}>
+        <TextField    
+          fullWidth      
           className="text"       
           color="primary"            
           name={inputName}
@@ -42,6 +48,7 @@ const Input = ({
           variant="standard"          
           onChange={handleChange} // Add the onChange handler
         />
+        </ThemeProvider>
         </div>
       </div>
     </div>

@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-8xs);
+  cursor: pointer;
 }
 .header_link_parent {
   width: 100%;

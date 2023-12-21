@@ -3,7 +3,11 @@ import styles from "./H2.module.css";
 
 const H2 = ({
   propHeader,  
-}) => {  
+}) => {
+  
+  if (propHeader===""){
+    return null
+  }
 
   return (
     <div className={styles.h2}>

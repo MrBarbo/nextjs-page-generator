@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from 'next/navigation';
 import axios from "axios";
-import styles from "./LoginPage.module.css";
+import { useRouter } from 'next/navigation';
+import { useState } from "react";
 import "../app/globals.css";
+import styles from "./LoginPage.module.css";
 const API_ENDPOINT = `http://localhost:3100`;
 
 const LoginPage = () => {  
@@ -64,6 +64,7 @@ const LoginPage = () => {
   
 
   const handleLogin = async(e) =>{
+    setIsVisible(false);
     try{      
       const response = await axios.post(
         "https://backend-supersite-production.up.railway.app/login",
@@ -99,6 +100,7 @@ const LoginPage = () => {
   } 
 
   const handleRegister = async(e) =>{
+    setErrorVis(false);
     try{      
       const response = await axios.post(
         "https://backend-supersite-production.up.railway.app/register",

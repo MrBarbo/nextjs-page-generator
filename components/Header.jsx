@@ -1,16 +1,25 @@
-import { useMemo } from "react";
-import StateDefault1 from "./StateDefault1";
-import StateDefault from "./StateDefault";
+import { useRouter } from "next/navigation";
+import { scroller } from 'react-scroll';
 import styles from "./Header.module.css";
+import StateDefault1 from "./StateDefault1";
 
 const Header = ({
   showFrameDiv,    
-  onHeaderLinkContainerClick,
+  onHeaderClick,
 }) => {
+  const router = useRouter();
+  const scrollTo = (elementName) => {
+    scroller.scrollTo(elementName, {
+      duration: 1000,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset: -65,
+    });
+  };
   
   return (
     <div className={styles.header}>
-      <div className={styles.logo_group}>
+      <div className={styles.logo_group} onClick={() => router.push("/")}>
         <img className={styles.logo_icon1} alt="" src="/logo1@2x.png" />
         <b className={styles.supersite1}>SuperSite</b>        
       </div>
@@ -18,29 +27,31 @@ const Header = ({
         <div className={styles.header_link_parent}>
           <StateDefault1
             inicio="Home"            
-            
-            onHeaderLinkContainerClick="unset"
+            onHeader= {() => scrollTo('whoWeAre')}
             
           />
           <StateDefault1
             inicio="About us"
-            
+            onHeader={() => scrollTo('ourValues')}
           />
           <StateDefault1
             inicio="Services"
             
-            onHeaderLinkContainerClick="unset"
+            onHeader={() => scrollTo('whatWeOffer')}
           />
           <StateDefault1
             inicio="Products"
             
-            onHeaderLinkContainerClick
+            onHeader={() => scrollTo('whatWeHave')}
           />
           <StateDefault1
             inicio="Projects"
-            onHeaderLinkContainerClick
-          />
-          <StateDefault/>
+            onHeader={() => scrollTo('whatWeDo')}
+          />  
+          <StateDefault1
+            inicio="Login/Register"
+            onHeader={() => router.push("/LoginPage")}
+          />         
         </div>
       )}
     </div>

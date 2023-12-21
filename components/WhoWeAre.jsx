@@ -10,6 +10,8 @@ const WhoWeAre = ({
   propParagraph,  
 }) => {  
 
+  
+
   return (
     <div className={styles.who_we_are}>
       <H2
