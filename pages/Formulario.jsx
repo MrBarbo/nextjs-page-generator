@@ -95,20 +95,6 @@ const Formulario = () => {
   */
 
   const link = "/"+inputValues.name;
-  const handleSubmit = () => {
-    Router.push({
-      pathname: "/Prefab",
-      query:{
-        name,
-        description,
-        mission,
-        vission,
-        objectives        
-        }
-    },link
-    );
-  };
-
 
   //Manejador para mandar contenido por query a la pagina generada
   const handleSubmit2 = () => {
@@ -132,41 +118,6 @@ const Formulario = () => {
         headerLinkCursor="pointer"
       />             
       <main className={styles.input_parent}>          
-            {/* <input
-              placeholder="Nombre suyo o de su proyecto/empresa"
-              value={name}
-              onChange={handlePageName}
-              className={styles.input_element}
-              type="text"
-            />
-            <input
-              placeholder="Descripción suya o de su proyecto/empresa"
-              value={description}
-              onChange={handleDescription}
-              className={styles.input_element}
-              type="text"
-            />
-            <input
-              placeholder="Misión(si es empresa/organización)"
-              value={mission}
-              onChange={handleMission}
-              className={styles.input_element}
-              type="text"
-            />
-            <input
-              placeholder="Visión(si es empresa/organización)"
-              value={vission}
-              onChange={handleVission}
-              className={styles.input_element}
-              type="text"
-            />
-            <input
-              placeholder="Objetivos(si es empresa/organización)"
-              value={objectives}
-              onChange={handleObjectives}
-              className={styles.input_element}
-              type="text"
-            />*/}
         <Input
           inputId="1"
           inputName="name"  
@@ -202,71 +153,37 @@ const Formulario = () => {
           inputLabel="Text goes here..."  
           onInputChange={(value) => handleInputChange('objectives', value)}
         />
-        <WhatWeOffer
-          serviceImageUrl="+"
-          serviceDescriptionLongTex2="Add Service"
-          whatWeOfferAlignSelf="stretch"
-          servicesBorder="4px dashed var(--gray)"
-          servicesWidth="474px"
-          serviceNameFontSize="unset"
-          serviceNameDisplay="unset"
-          serviceNameFontFamily="unset"
-          serviceNameColor="unset"
-          serviceNameTextAlign="unset"
-          serviceNameFontWeight="unset"
-          loremIpsumDolorFontSize="unset"
-          loremIpsumDolorDisplay="unset"
-          loremIpsumDolorFontFamily="unset"
-          loremIpsumDolorColor="unset"
-          loremIpsumDolorTextAlign="unset"
-          loremIpsumDolorFontWeight="unset"
-          servicesBorder1="4px dashed var(--gray)"
-          servicesWidth1="474px"
-          serviceNameFontSize1="unset"
-          serviceNameDisplay1="unset"
-          serviceNameFontFamily1="unset"
-          serviceNameColor1="unset"
-          serviceNameTextAlign1="unset"
-          serviceNameFontWeight1="unset"  
-          loremIpsumDolorFontSize1="unset"
-          loremIpsumDolorDisplay1="unset"
-          loremIpsumDolorFontFamily1="unset"
-          loremIpsumDolorColor1="unset"
-          loremIpsumDolorTextAlign1="unset"
-          loremIpsumDolorFontWeight1="unset"
-          servicesBorder2="4px dashed var(--gray)"
-          servicesWidth2="474px"
-          serviceNameFontSize2="unset"
-          serviceNameDisplay2="unset"
-          serviceNameFontFamily2="unset"
-          serviceNameColor2="unset"
-          serviceNameTextAlign2="unset"
-          serviceNameFontWeight2="unset"
-          loremIpsumDolorFontSize2="unset"
-          loremIpsumDolorDisplay2="unset"
-          loremIpsumDolorFontFamily2="unset"
-          loremIpsumDolorColor2="unset"
-          loremIpsumDolorTextAlign2="unset"
-          loremIpsumDolorFontWeight2="unset"
-          servicesBorder3="4px dashed var(--gray)"
-          servicesWidth3="474px"
-          servicesJustifyContent="center"
-          servicesHeight="218px"
-          servicesCursor="unset"
-          serviceNameAlignSelf="unset"
-          serviceNameFontSize3="48px"
-          serviceNameDisplay3="flex"
-          serviceNameAlignItems="center"
-          serviceNameJustifyContent="center"
-          serviceNameWidth="176px"
-          serviceNameHeight="42px"
-          serviceNameFlexShrink="0"
-          loremIpsumDolorAlignSelf="unset"
-          loremIpsumDolorFontSize3="20px"
-          onServicesContainer3Click={onServicesContainer3Click}
+        <Input
+          inputId="6"
+          inputName="service1"  
+          inputTitle="Servicios"          
+          inputLabel="Nombre del servicio 1..."  
+          onInputChange={(value) => handleInputChange('service1', value)}
         />
-        <Container />
-        <ContainerForm />
+        <Input
+          inputId="7"
+          inputName="service2"  
+          inputTitle=""          
+          inputLabel="Nombre del servicio 2..."  
+          onInputChange={(value) => handleInputChange('service2', value)}
+        />
+        <Input
+          inputId="8"
+          inputName="service3"  
+          inputTitle=""          
+          inputLabel="Nombre del servicio 3..."  
+          onInputChange={(value) => handleInputChange('service3', value)}
+        />
+        <Input
+          inputId="9"
+          inputName="service4"  
+          inputTitle=""          
+          inputLabel="Nombre del servicio 4..."  
+          onInputChange={(value) => handleInputChange('service4', value)}
+        />
+        
+        
+        
         <Socials
           socialsAlignItems="center"
           frameDivFlex="unset"
