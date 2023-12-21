@@ -75,11 +75,6 @@ const Formulario = () => {
 
   //--------------
   const [checked, setChecked] = useState(false);
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [mission, setMission] = useState("");
-  const [vission, setVission] = useState("");
-  const [objectives, setObjectives] = useState("");
 
 
   //Funcion para enviar los datos al servidor
