@@ -1,3 +1,39 @@
+.label2,
+.label1{
+  margin-left: 5px;
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+  color: var(--white);
+  align-self: stretch;  
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  text-align: left;
+  font-size: var(--font-size-xl);  
+  font-family: var(--font-fira-code);
+}
+.label2{
+  justify-content: flex-end;
+}
+.div1{
+  width: 100%;
+  overflow: hidden;
+  align-self: stretch;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 0px;
+  box-sizing: border-box;
+  gap: var(--gap-base);
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  
+  font-family: var(--font-inter);
+}
 .input_group {
   align-self: stretch;
   overflow: hidden;

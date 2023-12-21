@@ -1,16 +1,13 @@
-import { useMemo } from "react";
 import styles from "./StateDefault1.module.css";
 
 const StateDefault1 = ({
   inicio,  
-
-  
-  onHeaderLinkContainerClick,
+  onHeader,
 }) => {
   return (
     <div
       className={styles.statedefault1}
-      onClick={onHeaderLinkContainerClick}
+      onClick={onHeader}
     >
       <div className={styles.div3}>
         #

@@ -1,18 +1,16 @@
 "use client";
-import { useCallback } from "react";
-import { TextField, Checkbox, FormControlLabel } from "@mui/material";
+
+import { Checkbox } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useCallback, useState } from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Input from "../components/Input";
-import WhatWeOffer from "../components/WhatWeOffer";
-import Container from "../components/Container";
-import ContainerForm from "../components/ContainerForm";
 import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
-import { useRouter } from 'next/navigation';
-import Footer from "../components/Footer";
-import { useState } from "react";
+
+import Router from "next/router";
 import "../app/globals.css";
-import Router from "next/router"
 
 import styles from "./Formulario.module.css";
 
@@ -65,9 +63,18 @@ const Formulario = () => {
     );    
   };
 
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
+
+  const theme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
 
   //--------------
-
+  const [checked, setChecked] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [mission, setMission] = useState("");
@@ -132,27 +139,40 @@ const Formulario = () => {
           inputLabel="Text goes here..."
           onInputChange={(value) => handleInputChange('description', value)}
         />
-        <Input
+        <div className={styles.div1}>
+        <ThemeProvider theme={theme}>      
+        <span className={styles.label1}>¿Representas a una Empresa/PyME/Organización?</span>
+        <span className={styles.label2}>Si/No</span>
+        <Checkbox        
+        checked={checked}
+        onChange={handleChange}
+        inputProps={{ 'aria-label': 'controlled' }}
+        />
+        </ThemeProvider>
+        </div>
+        
+        { checked && <Input
           inputId="3"
           inputName="mission"  
           inputTitle="Mision"
           inputLabel="Text goes here..." 
           onInputChange={(value) => handleInputChange('mission', value)}           
-        />
-        <Input
+        /> }
+        { checked && <Input
           inputId="4"
           inputName="vission"  
           inputTitle="Vision"
           inputLabel="Text goes here..."            
           onInputChange={(value) => handleInputChange('vission', value)}
-        />
-        <Input
+        /> }
+        
+        { checked && <Input
           inputId="5"
           inputName="objectives"  
           inputTitle="Objetivos"          
           inputLabel="Text goes here..."  
           onInputChange={(value) => handleInputChange('objectives', value)}
-        />
+        /> }
         <Input
           inputId="6"
           inputName="service1"  

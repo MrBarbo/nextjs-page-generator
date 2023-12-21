@@ -1,15 +1,13 @@
 "use client";
-import React from 'react';
 import { useCallback } from "react";
-import Header from "../components/Header";
-import WhoWeAre from "../components/WhoWeAre";
-import OurValues from "../components/OurValues";
-import WhatWeOffer from "../components/WhatWeOffer";
-import WhatWeHave from "../components/WhatWeHave";
-import WhatWeDo from "../components/WhatWeDo";
+import { Element } from 'react-scroll';
 import Footer from "../components/Footer";
-import './globals.css'
-import { useRouter } from 'next/navigation';
+import Header from "../components/Header";
+import OurValues from "../components/OurValues";
+import WhatWeHave from "../components/WhatWeHave";
+import WhatWeOffer from "../components/WhatWeOffer";
+import WhoWeAre from "../components/WhoWeAre";
+import './globals.css';
 
 import styles from "./page.module.css";
 
@@ -19,8 +17,8 @@ const Prefab = () => {
 
   //const onProjectClick = useCallback(() => {() => router.push('/LoginPage')});
 
-  const onHeaderLinkContainerClick = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='whoWeAre']");
+  const onHeaderClickFunc = useCallback(() => {
+    const anchor = document.querySelector("[data-scroll-to='WhoWeAre']");
     if (anchor) {
       anchor.scrollIntoView({ block: "start", behavior: "smooth" });
     }
@@ -50,9 +48,10 @@ const Prefab = () => {
         showFrameDiv
         showHeaderLink
         headerLinkCursor="pointer"
-        onHeaderLinkContainerClick={onHeaderLinkContainerClick}
+        onHeaderClick={onHeaderClickFunc}
       />
       <div className={styles.who_we_are_group}>
+      <Element name="whoWeAre"></Element>
         <WhoWeAre
           textHeader=""
           textHeaderColor="SuperSite"
@@ -71,7 +70,8 @@ const Prefab = () => {
               Mediante el uso de inteligencia artificial, el sistema puede proveer a la página de características que requiera el usuario, como ser colores, imágenes o texto.
             </>
           }
-        />
+        />        
+        <Element name="ourValues"></Element>
         <OurValues
           propMis="Ayudar a los individuos, empresas y organizaciones a prosperar mediante la posibilidad de aprovechar las capacidades del internet, para que puedan construir innovación y reducir su impacto ambiental."
           propVis="Ser el principal aliado tecnológico de los individuos y organizaciones que trabajan para cambiar el mundo."
@@ -90,6 +90,7 @@ const Prefab = () => {
             </>
           }           
         />
+        <Element name="whatWeOffer"></Element>
         <WhatWeOffer
           serviceName="Pagina Web"
           serviceDesc="Tras rellenar un formulario con la información necesaria, podrá obtener su página web con dominio personalizado."
@@ -100,6 +101,7 @@ const Prefab = () => {
           serviceName3="Insights"
           serviceDesc3="El sitio web recopila información relevante para el cliente para ayudar en la toma de decisiones."                  
         />        
+        <Element name="whatWeHave"></Element>
         <WhatWeHave
           prodPhot="/rectangle-22@2x.png"
           produName="LiteSite"

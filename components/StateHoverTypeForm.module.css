@@ -46,6 +46,6 @@
 .addB_service_block{
   border: 2px dasehd var(--gray);
 }
-.service-block-shown:hover{
+.service_block_shown:hover{
   background: var( --primary-hover);
 }
