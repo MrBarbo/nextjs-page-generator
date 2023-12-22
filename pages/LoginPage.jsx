@@ -115,7 +115,6 @@ const LoginPage = () => {
           },
         }
       );
-        console.log(response.data);
 
         if (response.status === 200) {
           router.push('/Formulario');

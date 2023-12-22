@@ -19,7 +19,7 @@ const Prefab = () => {
   const  {
     query: { name, description, mission, vission, objectives, service1, service2,
     service3, service4,
-  service1d,service2d,service3d,service4d }
+  service1d,service2d,service3d,service4d,linkimg }
   } = router;
 
 
@@ -58,7 +58,7 @@ const Prefab = () => {
               ""
             
             }
-          image="/image1@2x.png"//ver como generar algo acá
+          image={linkimg}
           propParagraph={
             
             description

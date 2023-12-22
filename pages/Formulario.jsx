@@ -8,7 +8,7 @@ import Header from "../components/Header";
 import Input from "../components/Input";
 import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
-
+import axios from "axios";
 import Router from "next/router";
 import "../app/globals.css";
 
@@ -76,35 +76,29 @@ const Formulario = () => {
   //--------------
   const [checked, setChecked] = useState(false);
 
-
-  //Funcion para enviar los datos al servidor
-  /*
-  const handlePageName = (e) => {
-    setName(e.target.value);
-  };
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
-  };
-  const handleMission = (e) => {
-    setMission(e.target.value);
-  };
-  const handleVission = (e) => {
-    setVission(e.target.value);
-  };
-  const handleObjectives = (e) => {
-    setObjectives(e.target.value);
-  };
-  */
-
   const link = "/"+inputValues.name;
+  const prompt = "genera un logo o algo identificatorio para algo con nombre:"+inputValues.name+"y descripcion:"+inputValues.description
 
   //Manejador para mandar contenido por query a la pagina generada
-  const handleSubmit2 = () => {
+  const handleSubmit2 = async() => {
+      const response = await axios.post(
+        "https://backend-supersite-production.up.railway.app/genimg",
+        new URLSearchParams({
+          'name': prompt,
+        }),
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      );
+      var linkimg = response.data;
     // Use Router.push to navigate to the "/Prefab" page with input values in the query
     Router.push({
       pathname: "/Prefab", // Make sure to replace "/Prefab" with your actual path
       query: {
         ...inputValues,
+        linkimg
       },
     },link
     );
