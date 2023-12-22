@@ -2,15 +2,15 @@
 
 import { Checkbox } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from "axios";
+import Router from "next/router";
 import { useCallback, useState } from "react";
+import "../app/globals.css";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Input from "../components/Input";
 import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
-
-import Router from "next/router";
-import "../app/globals.css";
 
 import styles from "./Formulario.module.css";
 
@@ -79,19 +79,29 @@ const Formulario = () => {
   //--------------
   const [checked, setChecked] = useState(false);
 
-
-  //Funcion para enviar los datos al servidor
-
-
   const link = "/"+inputValues.name;
+  const prompt = "genera un logo o algo identificatorio para algo con nombre:"+inputValues.name+"y descripcion:"+inputValues.description
 
   //Manejador para mandar contenido por query a la pagina generada
-  const handleSubmit2 = () => {
+  const handleSubmit2 = async() => {
+      const response = await axios.post(
+        "https://backend-supersite-production.up.railway.app/genimg",
+        new URLSearchParams({
+          'name': prompt,
+        }),
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      );
+      var linkimg = response.data;
     // Use Router.push to navigate to the "/Prefab" page with input values in the query
     Router.push({
       pathname: "/Prefab", // Make sure to replace "/Prefab" with your actual path
       query: {
         ...inputValues,
+        linkimg
       },
     },link
     );
