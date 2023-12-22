@@ -53,6 +53,7 @@ const Formulario = () => {
   //Se agrega un handler para todos los componentes tipo Input y se guardan los valores para cada uno
   //para emplearlo, pasar como prop al componente lo siguiente:
   //onInputChange={(value) => handleInputChange('name', value)} donde name es la clave que identificará el contenido
+
   const [inputValues, setInputValues] = useState('');
 
   const handleInputChange = (inputName, value) => {
@@ -61,12 +62,14 @@ const Formulario = () => {
       [inputName]: value,
     })    
     );    
-  };
+  };  
 
+  //-----------------------------
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
 
+  
   const theme = createTheme({
     palette: {
       mode: 'dark',
@@ -78,23 +81,7 @@ const Formulario = () => {
 
 
   //Funcion para enviar los datos al servidor
-  /*
-  const handlePageName = (e) => {
-    setName(e.target.value);
-  };
-  const handleDescription = (e) => {
-    setDescription(e.target.value);
-  };
-  const handleMission = (e) => {
-    setMission(e.target.value);
-  };
-  const handleVission = (e) => {
-    setVission(e.target.value);
-  };
-  const handleObjectives = (e) => {
-    setObjectives(e.target.value);
-  };
-  */
+
 
   const link = "/"+inputValues.name;
 
@@ -135,15 +122,15 @@ const Formulario = () => {
           onInputChange={(value) => handleInputChange('description', value)}
         />
         <div className={styles.div1}>
-        <ThemeProvider theme={theme}>      
-        <span className={styles.label1}>¿Representas a una Empresa/PyME/Organización?</span>
-        <span className={styles.label2}>Si/No</span>
-        <Checkbox        
-        checked={checked}
-        onChange={handleChange}
-        inputProps={{ 'aria-label': 'controlled' }}
-        />
-        </ThemeProvider>
+          <ThemeProvider theme={theme}>      
+            <span className={styles.label1}>¿Representas a una Empresa/PyME/Organización?</span>
+            <span className={styles.label2}>Si/No</span>
+            <Checkbox        
+              checked={checked}
+              onChange={handleChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </ThemeProvider>
         </div>
         
         { checked && <Input

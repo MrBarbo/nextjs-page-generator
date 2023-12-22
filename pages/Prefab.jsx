@@ -1,15 +1,13 @@
 "use client";
+import { useRouter } from "next/router";
 import { useCallback } from "react";
-import Header from "../components/Header";
-import WhoWeAre from "../components/WhoWeAre";
-import OurValues from "../components/OurValues";
-import WhatWeOffer from "../components/WhatWeOffer";
-import WhatWeHave from "../components/WhatWeHave";
-import WhatWeDo from "../components/WhatWeDo";
-import Footer from "../components/Footer";
-import { useRouter } from "next/router"
-import Link from "next/link";
 import "../app/globals.css";
+import Footer from "../components/Footer";
+import OurValues from "../components/OurValues";
+import WhatWeDo from "../components/WhatWeDo";
+import WhatWeHave from "../components/WhatWeHave";
+import WhatWeOffer from "../components/WhatWeOffer";
+import WhoWeAre from "../components/WhoWeAre";
 
 import styles from "./Prefab.module.css";
 
@@ -94,7 +92,7 @@ const Prefab = () => {
         />
         <WhatWeHave
           prodPhot="/rectangle-22@2x.png"
-          produName="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName="LoremIpsumshdbsbbsbsbsbsbsbbs"
           productDesc="<LoremIpsumshdbsbbsbsbsbsbsbbs"
           prodPhot1="/rectangle-225@2x.png"
           produName1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
