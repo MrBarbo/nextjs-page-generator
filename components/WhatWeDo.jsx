@@ -1,26 +1,31 @@
-import { useMemo } from "react";
 import H2 from "./H2";
 import Property1Default from "./Property1Default";
 import styles from "./WhatWeDo.module.css";
-import WhatWeHave from "./WhatWeHave";
 
 const WhatWeDo = ({
   projFoto,
+  projTechs,
   projName,
   projDesc,
+  projLink,
   projFoto1,
+  projTechs1,
   projName1,
   projDesc1,
   projFoto2,
+  projTechs2,
   projName2,
   projDesc2,
-  projFoto3,
+  projFoto3,  
+  projTechs3,
   projName3,
   projDesc3,
   projFoto4,
+  projTechs4,
   projName4,
   projDesc4,
   projFoto5,
+  projTechs5,
   projName5,
   projDesc5,
 }) => {
@@ -33,11 +38,14 @@ const WhatWeDo = ({
       />
       <div className={styles.project_group}>
         <Property1Default
+          projTechs={projTechs}
           projFoto={projFoto}
           projName={projName}
-          projDesc={projDesc}                 
+          projDesc={projDesc}       
+          onFrameClick={projLink}          
         />
         <Property1Default
+          projTechs={projTechs1}
           projFoto={projFoto1}
           projName={projName1}
           projDesc={projDesc1}     

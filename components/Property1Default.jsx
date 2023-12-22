@@ -1,16 +1,17 @@
-import { useMemo } from "react";
-import StateDefaultTypePrimary from "./StateDefaultTypePrimary";
-import styles from "./Property1Default.module.css";
 import { useRouter } from 'next/navigation';
+import styles from "./Property1Default.module.css";
+import StateDefaultTypePrimary from "./StateDefaultTypePrimary";
 
 const Property1Default = ({
   projFoto,
+  projTechs,
   projName,
   projDesc, 
   onFrameClick,
 }) => {   
 
   const router = useRouter();
+  console.log(onFrameClick);
 
   return (
     <div className={styles.property_1default}>      
@@ -20,8 +21,8 @@ const Property1Default = ({
         src={projFoto}        
       />
       <div className={styles.project_parent}>
-        <div className={styles.project}>Project</div>
-        <div className={styles.techs}>techs</div>
+        <div className={styles.project}>{projTechs}</div>
+        
       </div>
       <div className={styles.project_name_group}>
         <div className={styles.project_name1}>{projName}</div>
@@ -29,11 +30,11 @@ const Property1Default = ({
         </div>
         <div
           className={styles.button_container}          
-          onClick={() => router.push(onFrameClick)}
+          onClick={() => window.open(onFrameClick)}
         >
           <StateDefaultTypePrimary
             go={`Go <~>`}
-            goClick={onFrameClick}
+            goClick={() => window.open(onFrameClick)}
           />
         </div>
       </div>

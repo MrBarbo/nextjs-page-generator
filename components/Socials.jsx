@@ -1,181 +1,111 @@
-import { useMemo } from "react";
+import { Checkbox } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useState } from 'react';
 import H2 from "./H2";
 import styles from "./Socials.module.css";
 
-const Socials = ({
-  socialsAlignItems,
-  frameDivFlex,
-  frameDivAlignItems,
-  frameDivJustifyContent,
-  frameDivGap,
-  rectangleDivBackgroundColor,
-  rectangleDivBackgroundColor1,
-  linkedinIconCursor,
-  rectangleDivBackgroundColor2,
-  instagramIconCursor,
-  rectangleDivBackgroundColor3,
-  githubIconCursor,
-  rectangleDivBackgroundColor4,
-  emailIconCursor,
-  rectangleDivBackgroundColor5,
-  rectangleDivBackgroundColor6,
-  onLinkedinIconClick,
-  onInstagramIconClick,
-  onGithubIconClick,
-  onEmailIconClick,
-}) => {
-  const socialsStyle = useMemo(() => {
-    return {
-      alignItems: socialsAlignItems,
-    };
-  }, [socialsAlignItems]);
+const Socials = ({ 
 
-  const frameDiv2Style = useMemo(() => {
-    return {
-      flex: frameDivFlex,
-      alignItems: frameDivAlignItems,
-      justifyContent: frameDivJustifyContent,
-      gap: frameDivGap,
-    };
-  }, [frameDivFlex, frameDivAlignItems, frameDivJustifyContent, frameDivGap]);
+  onInputChange1,
+  onInputChange2,
+  onInputChange3,
+  onInputChange4 
+}) => { 
+  const [checked, setChecked] = useState();
 
-  const rectangleDivStyle = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor,
-    };
-  }, [rectangleDivBackgroundColor]);
+  const handleLinked = (event) => {
+    const checked = event.target.checked;
+    // Call the callback function to pass the value to the parent component
+    onInputChange1(checked);
+  };
+  const handleInsta = (event) => {
+    const checked = event.target.checked;
+    // Call the callback function to pass the value to the parent component
+    onInputChange2(checked);
+  };
+  const handleGit = (event) => {
+    const checked = event.target.checked;
+    // Call the callback function to pass the value to the parent component
+    onInputChange3(checked);
+  };
+  const handleMail = (event) => {
+    const checked = event.target.checked;
+    // Call the callback function to pass the value to the parent component
+    onInputChange4(checked);
+  };
+  
 
-  const rectangleDiv1Style = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor1,
-    };
-  }, [rectangleDivBackgroundColor1]);
 
-  const linkedinIconStyle = useMemo(() => {
-    return {
-      cursor: linkedinIconCursor,
-    };
-  }, [linkedinIconCursor]);
-
-  const rectangleDiv2Style = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor2,
-    };
-  }, [rectangleDivBackgroundColor2]);
-
-  const instagramIconStyle = useMemo(() => {
-    return {
-      cursor: instagramIconCursor,
-    };
-  }, [instagramIconCursor]);
-
-  const rectangleDiv3Style = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor3,
-    };
-  }, [rectangleDivBackgroundColor3]);
-
-  const githubIconStyle = useMemo(() => {
-    return {
-      cursor: githubIconCursor,
-    };
-  }, [githubIconCursor]);
-
-  const rectangleDiv4Style = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor4,
-    };
-  }, [rectangleDivBackgroundColor4]);
-
-  const emailIconStyle = useMemo(() => {
-    return {
-      cursor: emailIconCursor,
-    };
-  }, [emailIconCursor]);
-
-  const rectangleDiv5Style = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor5,
-    };
-  }, [rectangleDivBackgroundColor5]);
-
-  const rectangleDiv6Style = useMemo(() => {
-    return {
-      backgroundColor: rectangleDivBackgroundColor6,
-    };
-  }, [rectangleDivBackgroundColor6]);
-
+  const theme = createTheme({
+    palette: {
+      mode: 'dark',
+    },
+  });
   return (
-    <div className={styles.socials1} style={socialsStyle}>
+    <div className={styles.socials1}>
       <H2
         propHeader="Socials"        
       />
-      <div className={styles.frame_div} style={frameDiv2Style}>
-        <div className={styles.discord_parent}>
-          <img className={styles.discord_icon} alt="" src="/discord.svg" />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDivStyle} />
-          </div>
-        </div>
-        <div className={styles.facebook_parent}>
-          <img className={styles.facebook_icon} alt="" src="/facebook.svg" />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDiv1Style} />
-          </div>
-        </div>
-        <div className={styles.linkedin_parent}>
+      <div className={styles.frame_div}>      
+        <div className={styles.check_parent}>
           <img
-            className={styles.linkedin_icon1}
+            className={styles.div_icon}
             alt=""
             src="/linkedin.svg"
-            onClick={onLinkedinIconClick}
-            style={linkedinIconStyle}
           />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDiv2Style} />
-          </div>
+          <ThemeProvider theme={theme} >
+            <Checkbox        
+              name="linked"
+              checked={checked}
+              onChange={handleLinked}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+            </ThemeProvider>          
         </div>
-        <div className={styles.instagram_parent}>
+        <div className={styles.check_parent}>
           <img
-            className={styles.instagram_icon1}
+            className={styles.div_icon1}
             alt=""
             src="/instagram.svg"
-            onClick={onInstagramIconClick}
-            style={instagramIconStyle}
           />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDiv3Style} />
-          </div>
+          <ThemeProvider theme={theme} >
+            <Checkbox     
+              name="insta"   
+              checked={checked}
+              onChange={handleInsta}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+            </ThemeProvider>
         </div>
-        <div className={styles.github_parent}>
+        <div className={styles.check_parent}>
           <img
-            className={styles.linkedin_icon1}
+            className={styles.div_icon}
             alt=""
             src="/github.svg"
-            onClick={onGithubIconClick}
-            style={githubIconStyle}
           />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDiv4Style} />
-          </div>
+          <ThemeProvider theme={theme} >
+            <Checkbox       
+              name="gith" 
+              checked={checked}
+              onChange={handleGit}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+            </ThemeProvider>
         </div>
-        <div className={styles.email_group}>
+        <div className={styles.check_parent}>
           <img
-            className={styles.linkedin_icon1}
+            className={styles.div_icon}
             alt=""
-            src="/email.svg"
-            onClick={onEmailIconClick}
-            style={emailIconStyle}
+            src="/email.svg"          
           />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDiv5Style} />
-          </div>
-        </div>
-        <div className={styles.telegram_parent}>
-          <img className={styles.discord_icon} alt="" src="/telegram.svg" />
-          <div className={styles.rectangle_wrapper}>
-            <div className={styles.instance_child} style={rectangleDiv6Style} />
-          </div>
+          <ThemeProvider theme={theme} >
+            <Checkbox        
+              name="email"
+              checked={checked}
+              onChange={handleMail}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+            </ThemeProvider>
         </div>
       </div>
     </div>

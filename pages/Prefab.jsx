@@ -1,8 +1,10 @@
 "use client";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
+import { Element } from 'react-scroll';
 import "../app/globals.css";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 import OurValues from "../components/OurValues";
 import WhatWeDo from "../components/WhatWeDo";
 import WhatWeHave from "../components/WhatWeHave";
@@ -15,31 +17,39 @@ const Prefab = () => {
 
   const router = useRouter();
   const  {
-    query: { name, description, mission, vission, objectives, service1, service2,
-    service3, service4,
-  service1d,service2d,service3d,service4d,linkimg }
+    query: { name, description, mission, vission, objectives, 
+    service1, service2, service3, service4,
+    service1d,service2d,service3d,service4d,linkimg,
+    projTechs1, projName1, projDesc1, projLink1,
+    projTechs2, projName2, projDesc2, projLink2,  
+    linked, insta, gith, email,  
+}
   } = router;
 
 
   const onEmailIconClick = useCallback(() => {
-    window.location.href = "mailto:nicoboattini@gmail.com";
+    window.location.href = `mailto:${email}`;
   }, []);
 
   const onLinkedinIconClick = useCallback(() => {
-    window.open("linkedin.com/in/nicoboattini");
+    window.open(linked);
   }, []);
 
   const onInstagramIconClick = useCallback(() => {
-    window.open("https://www.instagram.com/nicolasboattini/");
+    window.open(insta);
   }, []);
 
   const onGithubIconClick = useCallback(() => {
-    window.open("github.com/nicolasboattini");
+    window.open(gith);
   }, []);
 
   return (
     <div className={styles.prefab}>
+      <Header
+        showFrameDiv        
+      />
       <div className={styles.who_we_are_group}>
+      <Element name="whoWeAre"></Element>
         <WhoWeAre
           textHeader={
             
@@ -63,6 +73,7 @@ const Prefab = () => {
             
             }
         />
+        <Element name="ourValues"></Element>
         <OurValues
           propMis={
 
@@ -80,6 +91,7 @@ const Prefab = () => {
  
           }
         />
+        <Element name="whatWeOffer"></Element>
         <WhatWeOffer
           serviceName= {service1}
           serviceDesc= {service1d}
@@ -90,6 +102,7 @@ const Prefab = () => {
           serviceName3={service4}
           serviceDesc3={service4d}
         />
+        <Element name="whatWeHave"></Element>
         <WhatWeHave
           prodPhot="/rectangle-22@2x.png"
           produName="LoremIpsumshdbsbbsbsbsbsbsbbs"
@@ -110,30 +123,35 @@ const Prefab = () => {
           produName5="<LoremIpsumshdbsbbsbsbsbsbsbbs"
           productDesc5="<LoremIpsumshdbsbbsbsbsbsbsbbs"
         />
+        <Element name="whatWeDo"></Element>
         <WhatWeDo
-          projFoto="/rectangle-22@2x.png"
-          projName="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          projDesc="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          projFoto={"/rectangle-22@2x.png"}
+          projTechs={projTechs1}
+          projName={projName1}
+          projDesc={projDesc1}
+          projLink={projLink1}
         
-          projFoto1="/rectangle-225@2x.png"
-          projName1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          projDesc1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          projFoto1={"/rectangle-22@2x.png"}
+          projTechs1={projTechs2}
+          projName1={projName2}
+          projDesc1={projDesc2}
+          projLink1={projLink2}
 
           projFoto2="/rectangle-227@2x.png"
-          projName2="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          projDesc2="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          projName2=""
+          projDesc2=""
 
           projFoto3="/rectangle-22@2x.png"
-          projName3="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          projDesc3="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          projName3=""
+          projDesc3=""
 
           projFoto4="/rectangle-225@2x.png"
-          projName4="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          projDesc4="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          projName4=""
+          projDesc4=""
 
           projFoto5="/rectangle-227@2x.png"
-          projName5="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          projDesc5="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          projName5=""
+          projDesc5=""
         />
       </div>
       <Footer
