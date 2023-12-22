@@ -7,14 +7,14 @@ const OurValues = ({
   propVis, 
   propObj,  
 }) => {
-  if(propMis==""&&propVis==""&&propObj==""){
+  if(propMis===""&&propVis===""&&propObj===""||!propMis){
     return null;
   }  
 
   return (
     <div className={styles.our_values}>
       <H2
-        propHeader="Our Values"        
+        propHeader="Nuestros valores"        
       />
       <div className={styles.titles}>
         <div className={styles.titles1}>Mission</div>

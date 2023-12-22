@@ -24,7 +24,7 @@ const Footer = ({
                 <div className={styles.supersite}>SuperSite</div>
               </div>
             </div>
-            <div className={styles.lore_ipsum_dolor}>Lore Ipsum dolor sit amet</div>
+            <div className={styles.lore_ipsum_dolor}></div>
           </div>
           <div className={styles.socials_parent}>
             <div className={styles.socials}>Socials</div>

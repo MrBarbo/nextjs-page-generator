@@ -13,11 +13,15 @@ const   WhatWeOffer = ({
   serviceName3,
   serviceDesc3,
 }) => {
+
+  if(serviceName===""&&serviceDesc===""||!serviceName){
+    return null;
+  }  
   
   return (
     <section className={styles.what_we_offer}>
       <H2
-        propHeader="Services"        
+        propHeader="Servicios"        
       />
       <div className={styles.services_parent}>
         <StateHoverTypeForm

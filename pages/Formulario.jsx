@@ -2,15 +2,15 @@
 
 import { Checkbox } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from "axios";
+import Router from "next/router";
 import { useCallback, useState } from "react";
+import "../app/globals.css";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Input from "../components/Input";
 import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
-import axios from "axios";
-import Router from "next/router";
-import "../app/globals.css";
 
 import styles from "./Formulario.module.css";
 
@@ -53,6 +53,7 @@ const Formulario = () => {
   //Se agrega un handler para todos los componentes tipo Input y se guardan los valores para cada uno
   //para emplearlo, pasar como prop al componente lo siguiente:
   //onInputChange={(value) => handleInputChange('name', value)} donde name es la clave que identificará el contenido
+
   const [inputValues, setInputValues] = useState('');
 
   const handleInputChange = (inputName, value) => {
@@ -61,12 +62,14 @@ const Formulario = () => {
       [inputName]: value,
     })    
     );    
-  };
+  };  
 
+  //-----------------------------
   const handleChange = (event) => {
     setChecked(event.target.checked);
   };
 
+  
   const theme = createTheme({
     palette: {
       mode: 'dark',
@@ -129,15 +132,15 @@ const Formulario = () => {
           onInputChange={(value) => handleInputChange('description', value)}
         />
         <div className={styles.div1}>
-        <ThemeProvider theme={theme}>      
-        <span className={styles.label1}>¿Representas a una Empresa/PyME/Organización?</span>
-        <span className={styles.label2}>Si/No</span>
-        <Checkbox        
-        checked={checked}
-        onChange={handleChange}
-        inputProps={{ 'aria-label': 'controlled' }}
-        />
-        </ThemeProvider>
+          <ThemeProvider theme={theme}>      
+            <span className={styles.label1}>¿Representas a una Empresa/PyME/Organización?</span>
+            <span className={styles.label2}>Si/No</span>
+            <Checkbox        
+              checked={checked}
+              onChange={handleChange}
+              inputProps={{ 'aria-label': 'controlled' }}
+            />
+          </ThemeProvider>
         </div>
         
         { checked && <Input
