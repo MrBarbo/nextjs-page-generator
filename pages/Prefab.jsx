@@ -10,7 +10,6 @@ import WhatWeDo from "../components/WhatWeDo";
 import WhatWeHave from "../components/WhatWeHave";
 import WhatWeOffer from "../components/WhatWeOffer";
 import WhoWeAre from "../components/WhoWeAre";
-
 import styles from "./Prefab.module.css";
 
 const Prefab = () => {
