@@ -1,8 +1,7 @@
-import { useMemo } from "react";
 import styles from "./Property1FormAdd1.module.css";
 
 const Property1FormAdd1 = ({
-  rectangle22, 
+  imgSrc, 
 
   onClickEv,
 }) => {
@@ -11,7 +10,7 @@ const Property1FormAdd1 = ({
       <img
         className={styles.property_1form_add_item}
         alt=""
-        src={rectangle22}        
+        src={imgSrc}        
       />
       <div
         className={styles.group}       

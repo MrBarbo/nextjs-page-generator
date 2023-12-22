@@ -1,10 +1,9 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import styles from "./Container.module.css";
 import H2 from "./H2";
 import ProductFormContainer from "./ProductFormContainer";
-import styles from "./Container.module.css";
-import { useRouter } from 'next/navigation'
 
 const Container = () => {
   const router = useRouter();
@@ -13,7 +12,7 @@ const Container = () => {
   return (
     <div className={styles.what_we_have1}>
       <H2
-        propHeader="Products"        
+        propHeader="Productos"        
       />
       <ProductFormContainer />
     </div>

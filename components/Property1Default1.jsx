@@ -1,8 +1,7 @@
 'use client'
-import { useMemo } from "react";
-import StateDefaultTypePrimary from "./StateDefaultTypePrimary";
 import { useRouter } from 'next/navigation';
 import styles from "./Property1Default1.module.css";
+import StateDefaultTypePrimary from "./StateDefaultTypePrimary";
 
 const Property1Default1 = ({
   prodPhoto,
@@ -12,7 +11,9 @@ const Property1Default1 = ({
   onClickEv,
 }) => {
   const router = useRouter();  
-
+  if(produName===""&&productDesc===""||!produName){
+    return null;
+  }
   return (
     <div className={styles.property_1default1}>
       <img

@@ -75,7 +75,8 @@
   justify-content: flex-start;
   gap: var(--gap-5xl);
 }
-.what_we_do1 {
+.what_we_do1,
+.what_we_have1 {
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -83,9 +84,9 @@
   justify-content: flex-start;
   padding: var(--padding-28xl) 0px;
   gap: var(--gap-3xs);
-  text-align: left;
+  text-align: center;
   font-size: var(--font-size-base);
-  color: var(--gray);
+  color: var(--white);
   font-family: var(--font-fira-code);
 }
 .input_element{
@@ -94,6 +95,7 @@
   color: #3b3b3b;
   margin-top: 70px;
 }
+.product_group,
 .project_container {
   align-self: stretch;
   overflow: hidden;
@@ -108,4 +110,14 @@
   color: var(--gray);
   font-family: var(--font-fira-code);
 }
+
+@media screen and (max-width: 420px) {
+  .product_group {
+    flex-direction: row;
+    gap: var(--gap-41xl);
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
 

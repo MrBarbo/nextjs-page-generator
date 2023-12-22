@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import styles from "./StateHoverTypeForm.module.css";
 
 const StateHoverTypeForm = ({
@@ -6,6 +5,9 @@ const StateHoverTypeForm = ({
   addService,  
   onServicesContainer3Click,
 }) => {
+  if(prop===""&&addService===""||!prop){
+    return null;
+  } 
   return (
     <div
       className={styles.service_block_shown}

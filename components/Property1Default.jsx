@@ -7,12 +7,15 @@ const Property1Default = ({
   projTechs,
   projName,
   projDesc, 
-  onFrameClick,
+  projLink,
 }) => {   
 
   const router = useRouter();
-  console.log(onFrameClick);
+  console.log(projLink);
 
+  if(projName===""&&projDesc===""||!projName){
+    return null;
+  }
   return (
     <div className={styles.property_1default}>      
       <img
@@ -30,11 +33,11 @@ const Property1Default = ({
         </div>
         <div
           className={styles.button_container}          
-          onClick={() => window.open(onFrameClick)}
+          onClick={() => window.open(projLink)}
         >
           <StateDefaultTypePrimary
             go={`Go <~>`}
-            goClick={() => window.open(onFrameClick)}
+            goClick={() => window.open(projLink)}
           />
         </div>
       </div>

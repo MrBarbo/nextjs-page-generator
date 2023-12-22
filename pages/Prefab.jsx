@@ -19,7 +19,11 @@ const Prefab = () => {
   const  {
     query: { name, description, mission, vission, objectives, 
     service1, service2, service3, service4,
-    service1d,service2d,service3d,service4d,linkimg,
+    service1d,service2d,service3d,service4d,
+    linkimg,
+    prodTitle, prodDesc, prodLink,
+    prodTitle2, prodDesc2, prodLink2,
+    prodTitle3, prodDesc3, prodLink3,
     projTechs1, projName1, projDesc1, projLink1,
     projTechs2, projName2, projDesc2, projLink2,  
     linked, insta, gith, email,  
@@ -55,17 +59,7 @@ const Prefab = () => {
             
               name
               
-            }
-          textHeaderColor={
-            
-              ""
-              
-            }
-          textHeaderCont={
-            
-              ""
-            
-            }
+            }          
           image={linkimg}
           propParagraph={
             
@@ -105,23 +99,26 @@ const Prefab = () => {
         <Element name="whatWeHave"></Element>
         <WhatWeHave
           prodPhot="/rectangle-22@2x.png"
-          produName="LoremIpsumshdbsbbsbsbsbsbsbbs"
-          productDesc="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName={prodTitle}
+          productDesc={prodDesc}
+          prodLink={prodLink}
           prodPhot1="/rectangle-225@2x.png"
-          produName1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          productDesc1="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName1={prodTitle2}
+          productDesc1={prodDesc2}
+          prodLink1={prodLink2}
           prodPhot2="/rectangle-227@2x.png"
-          produName2="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          productDesc2="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName2={prodTitle3}
+          productDesc2={prodDesc3}
+          prodLink2={prodLink3}
           prodPhot3="/rectangle-22@2x.png"
-          produName3="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          productDesc3="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName3=""
+          productDesc3=""
           prodPhot4="/rectangle-225@2x.png"
-          produName4="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          productDesc4="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName4=""
+          productDesc4=""
           prodPhot5="/rectangle-227@2x.png"
-          produName5="<LoremIpsumshdbsbbsbsbsbsbsbbs"
-          productDesc5="<LoremIpsumshdbsbbsbsbsbsbsbbs"
+          produName5=""
+          productDesc5=""
         />
         <Element name="whatWeDo"></Element>
         <WhatWeDo
