@@ -16,7 +16,6 @@ const Input = ({
   //Manejador de contenido del texto
   const handleChange = (event) => {
     const value = event.target.value;
-
     // Call the callback function to pass the value to the parent component
     onInputChange(value);
   };

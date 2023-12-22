@@ -16,28 +16,22 @@ const Prefab = () => {
   //const router = useRouter();
 
   //const onProjectClick = useCallback(() => {() => router.push('/LoginPage')});
-
-  const onHeaderClickFunc = useCallback(() => {
-    const anchor = document.querySelector("[data-scroll-to='WhoWeAre']");
-    if (anchor) {
-      anchor.scrollIntoView({ block: "start", behavior: "smooth" });
-    }
-  }, []);
+  
 
   const onEmailIconClick = useCallback(() => {
-    window.location.href = "mailto:nicoboattini@gmail.com";
+    window.location.href = "mailto:proyecto.supersite@gmail.com";
   }, []);
 
   const onLinkedinIconClick = useCallback(() => {
-    window.open("linkedin.com/in/nicoboattini");
+    window.open("https://www.linkedin.com/in/supersite");
   }, []);
 
   const onInstagramIconClick = useCallback(() => {
-    window.open("https://www.instagram.com/nicolasboattini/");
+    window.open("https://www.instagram.com/supersite/");
   }, []);
 
   const onGithubIconClick = useCallback(() => {
-    window.open("github.com/nicolasboattini");
+    window.open("github.com/supersite");
   }, []);
 
   
@@ -45,10 +39,7 @@ const Prefab = () => {
   return (
     <div className={styles.prefab}>
       <Header
-        showFrameDiv
-        showHeaderLink
-        headerLinkCursor="pointer"
-        onHeaderClick={onHeaderClickFunc}
+        showFrameDiv             
       />
       <div className={styles.who_we_are_group}>
       <Element name="whoWeAre"></Element>
@@ -106,22 +97,27 @@ const Prefab = () => {
           prodPhot="/rectangle-22@2x.png"
           produName="LiteSite"
           productDesc="Creación de páginas simple, sin costes y con tecnologías de IA"
-          onClickEvent="/LoginPage"
+          prodLink="/LoginPage"
           prodPhot1="/rectangle-225@2x.png"
           produName1="MiniSite"
           productDesc1="LiteSite+ Acceso a Analytics"
+          prodLink1="/LoginPage"
           prodPhot2="/rectangle-227@2x.png"
           produName2="ProSite"
-          productDesc2="Minisite+ Mayor variedad de temas y colores"
+          productDesc2="Minisite+ Mayor variedad de temas y colores"  
+          prodLink2="/LoginPage"        
           prodPhot3="/rectangle-22@2x.png"
           produName3="MegaSite"
           productDesc3="Prosite+ Posibilidad de usar nuestro editor de páginas para mas personalización"
+          prodLink3="/LoginPage"
           prodPhot4="/rectangle-225@2x.png"
           produName4="UltraSite"
           productDesc4="Megasite+ Posibilidad de descargar las páginas creadas"
+          prodLink4="/LoginPage"
           prodPhot5="/rectangle-227@2x.png"
           produName5="SuperSite"
-          productDesc5="El producto más completo, hecho personalizadamente a tu medida"          
+          productDesc5="El producto más completo, hecho personalizadamente a tu medida"             
+          prodLink5="/LoginPage"
         />        
       </div>
       <Footer

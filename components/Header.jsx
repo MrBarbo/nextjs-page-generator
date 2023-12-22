@@ -4,8 +4,7 @@ import styles from "./Header.module.css";
 import StateDefault1 from "./StateDefault1";
 
 const Header = ({
-  showFrameDiv,    
-  onHeaderClick,
+  showFrameDiv,
 }) => {
   const router = useRouter();
   const scrollTo = (elementName) => {

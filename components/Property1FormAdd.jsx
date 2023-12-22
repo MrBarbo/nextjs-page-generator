@@ -1,8 +1,7 @@
-import { useMemo } from "react";
 import styles from "./Property1FormAdd.module.css";
 
 const Property1FormAdd = ({ 
-  
+  imgSrc,
   onClickEv
 }) => {
  
@@ -12,7 +11,7 @@ const Property1FormAdd = ({
       <img
         className={styles.property_1form_add_child}
         alt=""
-        src="/rectangle_22@2x.png"
+        src={imgSrc}
       />
       <div
         className={styles.parent}        
