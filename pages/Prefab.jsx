@@ -26,7 +26,7 @@ const Prefab = () => {
     prodTitle3, prodDesc3, prodLink3,
     projTechs1, projName1, projDesc1, projLink1,
     projTechs2, projName2, projDesc2, projLink2,  
-    linked, insta, gith, email,  
+    linked, insta, gith, email,bettertext  
 }
   } = router;
 
@@ -63,7 +63,7 @@ const Prefab = () => {
           image={linkimg}
           propParagraph={
             
-            description
+            bettertext
             
             }
         />

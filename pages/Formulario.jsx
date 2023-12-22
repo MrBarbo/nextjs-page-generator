@@ -15,7 +15,7 @@ import Property1FormAdd from "../components/Property1FormAdd";
 import Property1FormAdd1 from '../components/Property1FormAdd1';
 import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
-
+import axios from "axios"
 import styles from "./Formulario.module.css";
 
 
@@ -84,9 +84,11 @@ const Formulario = () => {
 
   const link = "/"+inputValues.name;
   const prompt = "Diseña un logo o elemento distintivo para identificar de manera única y expcepcional a una Empresa/PyME/Organización llamada "+inputValues.name+" tomando en cuenta la siguiente descripción de su actividad para capturar toda su esencia: "+inputValues.description
+  const prompttext = inputValues.description;
 
   //Manejador para mandar contenido por query a la pagina generada
-  const handleSubmit2 = async() => {      
+  const handleSubmit2 = async() => {   
+    //Generador de imagen   
     const response = await axios.post(
       "https://backend-supersite-production.up.railway.app/genimg",
       new URLSearchParams({
@@ -99,12 +101,25 @@ const Formulario = () => {
       }
     );
     var linkimg = response.data;
-    // Use Router.push to navigate to the "/Prefab" page with input values in the query
+    //Mejorador de texto
+    const response2 = await axios.post(
+      "https://backend-supersite-production.up.railway.app/bettertext",
+      new URLSearchParams({
+        'name': prompttext,
+      }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      }
+    );
+    var bettertext = response2.data;
+    //Enrutado
     Router.push({
-      pathname: "/Prefab", // Make sure to replace "/Prefab" with your actual path
+      pathname: "/Prefab", 
       query: {
         ...inputValues,         
-        linkimg
+        linkimg,bettertext
       },
     },link
     );
