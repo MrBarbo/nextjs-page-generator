@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from "react";
 import "../app/globals.css";
 import styles from "./LoginPage.module.css";
-const API_ENDPOINT = `http://localhost:3100`;
+
 
 const LoginPage = () => {  
     
@@ -142,6 +142,7 @@ const LoginPage = () => {
     }
   }
   return (
+        
     <div className={styles.loginpage}>
       <img className={styles.frameicon} alt="" src="/frame@2x.png" />
       <div className={styles.logindiv}>
