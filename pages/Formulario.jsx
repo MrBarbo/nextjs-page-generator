@@ -1,5 +1,5 @@
 "use client";
-import axios from "axios";
+import  axios  from 'axios';
 import { Checkbox } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Router from "next/router";
@@ -15,7 +15,6 @@ import Property1FormAdd from "../components/Property1FormAdd";
 import Property1FormAdd1 from '../components/Property1FormAdd1';
 import Socials from "../components/Socials";
 import StateDefaultTypePrimary from "../components/StateDefaultTypePrimary";
-import axios from "axios"
 import styles from "./Formulario.module.css";
 
 
